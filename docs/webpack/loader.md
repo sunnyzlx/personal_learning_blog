@@ -15,5 +15,5 @@ loader, 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身�
 
 ## 常用loader
 
-1. file-loader
-2. url-loader
+1. file-loader, 将文件发送到输出文件夹，并返回（相对）URL
+2. url-loader, 像 file loader 一样工作，但如果文件小于限制，可以返回 data URL
