@@ -24,6 +24,20 @@ module.exports = {
         nav: [],
         sidebar: [
             {
+                title: 'JavaScript',
+                collapsable: false,
+                children: [
+                    ['JavaScript/', 'Introduction'],
+                    'JavaScript/js类型及其判断',
+                    'JavaScript/js事件循环机制',
+                    'JavaScript/js算法',
+                    'JavaScript/js原型链详解',
+                    'JavaScript/js作用域面试题',
+                    'JavaScript/关于setTimeout的经典面试题',
+                    'JavaScript/DOM知识梳理'
+                ]
+            },
+            {
                 title: 'webpack',
                 collapsable: false,
                 children: [
