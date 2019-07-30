@@ -29,12 +29,18 @@ module.exports = {
                 children: [
                     ['JavaScript/', 'Introduction'],
                     'JavaScript/js类型及其判断',
+                    'JavaScript/js闭包',
+                    'JavaScript/this小结',
                     'JavaScript/js事件循环机制',
                     'JavaScript/js算法',
                     'JavaScript/js原型链详解',
                     'JavaScript/js作用域面试题',
                     'JavaScript/关于setTimeout的经典面试题',
-                    'JavaScript/DOM知识梳理'
+                    'JavaScript/DOM知识梳理',
+                    'JavaScript/hybrid',
+                    'JavaScript/vdom',
+                    'JavaScript/20道JS原理题',
+                    'JavaScript/interview'
                 ]
             },
             {
@@ -45,7 +51,16 @@ module.exports = {
                     'webpack/entry',
                     'webpack/output',
                     'webpack/loader',
-                    'webpack/plugins'
+                    'webpack/plugins',
+                    'webpack/example'
+                ]
+            },
+            {
+                title: 'workSummary',
+                collapsable: false,
+                children: [
+                    ['workSummary/', 'Introduction'],
+                    'workSummary/混合开发离线包方案'
                 ]
             }
         ]
