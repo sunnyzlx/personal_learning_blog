@@ -213,11 +213,70 @@ elem.dispatchEvent(eve) //触发的是事件对象eve,  监听的是事件类型
    - HTTP/2复用TCP连接，在一个连接里，客户端和浏览器都可以同时发送多个请求和回应，而且不用按照顺序一一对应，这样就避免了“对头堵塞”。
    - 举例来说，在一个TCP连接里面，服务器同时受到了A请求和B请求，于是先回应A请求，结果发现处理过程非常耗时，于是就发送A请求已经处理好的部分，接着回应B请求，完成后，在发送A请求剩下的部分，这样双向的、实时的通信，就叫做多工。
 ## 原型链类
-1. 创建对象有几种方法
-2. 原型，构造函数，实例，原型链
-3. instanceof 的原理
-4. new运算符
 
+### 1. 创建对象有几种方法
+#### 1）对象字面量方式（生成对象的原型链指向Object）
+     - var o1={name: 'o1'}
+     - var o2=new Object({name: 'o2'})
+#### 2) 使用显式的构造函数来创建对象
+     ```
+     var M=function(){this.name='name'}
+     var 03=new M()
+     ```
+#### 3)通过Object.create(),参数是一个对象,ta将作为新生成对象的原型对象
+     ```
+     var p={name: 'p'}
+     var o4=Object.create(p)
+     ```
+### 2. 原型，构造函数，实例，原型链
+#### 1）实例：无论是通过对象字面量，还是new Object(),还是通过构造函数的方式，生成的对象，都是一个实例
+#### 2）构造函数：new关键字后面的函数，任何一个函数，只要被new使用了，都是一个构造函数，构造函数也是函数，拥有普通函数的特性
+#### 3）构造函数可以使用new 运算符，来生成一个实例
+#### 4）函数都有一个prototype属性，这是在函数声明的时候，js自动给ta加上去的，这个属性会自动初始化一个原型对象，这个原型对象还有一个constructor属性，指向该构造函数
+#### 5）原型链：原型链就是，我从我的一个实例对象往上找构造这个实例的相关联的对象，然后这个关联的对象再往上找，它又有创造它的上一级的原型对象，以此类推，一直到Object.prototype原型对象终止，Object.prototype是原型链的顶端。（如果找到Object.prototype上还找不到，原路返回，告诉实例此方法或属性没有找到或者没有定义。如果说在中间的任意一个环节找到了，他就停止向上查找直接返回这个方法的用处）
+#### 6）原型对象和原型链他们之间到底起什么作用？
+  - 如果在构造函数里面用this添加很多方法或者属性，以后每个实例都会拷贝一份这个东西，会占用很多内存，我们可以把那些共用的方法都放在原型对象上，任何一个实例就可以通过他的原型链找到他上面的原型对象，原型对象上面的属性和方法，都是可以被实例共享的
+### 3. instanceof 的原理
+  - instanceof用于判断，某个实例对象是否为某个构造函数的实例，
+  - instanceof本质，判断某个实例对象的__proto__属性和某个构造函数的prototype属性是否指向同一个引用地址
+#### 注意：
+  - instanceof无法判断这个实例对象的直接构造函数是哪个，因为整条原型链上的构造函数都会对这个实例对象返回true
+  - 要判断直接的构造函数，需要使用原型对象的constructor属性，它指向直接构造函数本身
+
+### 关于原型和原型链的6个原型规则：
+  - 1.所有的引用类型（数组、对象、函数），都具有对象特性，即可自由扩展属性（除了“null”以外）
+  - 2.所有的引用类型（数组、对象、函数），都有一个__proto__（我们约定它为隐式原型）属性，属性值是一个普通的对象
+  - 3.所有的函数，都有一个prototype（我们约定它为显示原型）属性，属性值也是一个普通对象
+  - 4.所有的引用类型（数组、对象、函数），__proto__（隐式原型）属性值指向它的构造函数的prototype（显示原型）属性值
+  - 5.当试图得到一个对象（引用类型包括对象、数组、函数）的某个属性时，如果这个对象本身没有这个属性，那么会去它的__proto__（即它的构造函数的prototype）中寻找
+  - 6.每个构造函数的prototype属性都有一个constructor属性，这个属性指向构造函数本身
+  ```
+  var item;
+  for(item in f) {
+    //高级浏览器已经在for in中屏蔽了来自原型的属性,但是这里建议大家还是加上这个判断，保证程序的壮健性
+    if(f.hasOwnProperty(item)){ 
+      console.log(item)
+    }
+  }
+  ```
+
+### 4. new运算符
+#### 原理：
+   - 1、一个新对象被创建。
+   - 2、它继承自构造函数的原型对象（比如Foo.prototype）
+   - 3、构造函数Foo被执行。执行的时候，相应的传参会被传入，同时上下文（this）会被指定为这个新实例。new Foo等同与new Foo（），只能用在不传递任何参数的情况。
+   - 4、如果构造函数返回了一个“对象”，那么这个对象会取代整个new出来的结果。如果构造函数没有返回对象，那么new出来的结果为步骤一创建的对象。
+```
+var new1=function(F){
+  var o=Object.create(F.prototype);
+  var k=F.call(o);
+  if(typeof k === 'object'){
+    return k
+  }else{
+    return o
+  }
+}
+```
 ## 面向对象类
 
 ### 1.类与实例
@@ -246,7 +305,106 @@ elem.dispatchEvent(eve) //触发的是事件对象eve,  监听的是事件类型
   实现继承的本质：原型链
   #### 继承的几种方式，各自的优缺点？
   1. 借助构造函数实现继承
-     在子类的构造函数体里，执行父级构造函数，call和apply都是改变函数运行的上下文
+     - 关键：在子类的构造函数体里，执行父级构造函数，(call和apply都是改变函数运行的上下文)
+  ```
+  function Parent1(){
+    this.name= 'name'
+  }
+  function Child1(){
+    Parent1.call(this); // 这句是实现继承的关键，call的两个妙用，1、继承 2、修改函数运行时的this指针
+    this.child = 'child'
+  }
+  console.log(new Child1())
+  ```
+
+     - 注意：如果父类有参数，可以在call中传递参数，call中的第二个参数开始就是函数中的参数。
+     - 缺点：只能继承Parent1构造函数中的属性和方法，Parent1原型链上的东西Child1没法继承。如果Parent1 的原型上有Parent1.prototype.say=function(){}，用call继承就没法继承原型上的东西。
+  2. 借助原型链实现继承
+     - 关键：将子类构造函数的prototype属性赋值为父类构造函数的实例对象
+     - 缺点：利用子类实例化多个对象时，修改继承自父类的属性，且该属性值为引用类型时，多个实例间会互相影响
+
+  ```
+  function Parent2(){
+    this.name='parent2';
+    this.play=[1,2,3,4];
+  }
+  function Child2(){
+    this.child='child2'
+  }
+  Child2.prototype=new Parent2() //关键
+  var s1=new Child2()
+  var s2=new Child2()
+  console.log(s1.play,s2.play);
+  s1.play.push(4);//该实例s1上的属性的时候s2也受到影响
+  console.log(s1.play,s2.play);
+  ```
+
+     - 当父类有数组的时候，一个实例修改了父类的数组的时候另一个实例也修改了父类的数组。原因是因为他们原型链中的对象是共用的。然后数组是个引用类型，所以指向的是一个地址，如果改变的是一个值类型的属性，就不会相互影响
+
+  3. 组合方式
+  - 关键：结合了构造函数继承和原型链继承的优点，这种方式是真正写面向对象继承最通用的方式
+  - 缺点：父类构造函数执行了两次，在call的时候执行了一次，在原型的时候new Parent3的时候又执行了一次
+  ```
+    function Parent3(){
+      this.name="parent3";
+      this.play=[1,2,3];
+    }
+
+    function Child3(){
+      Parent3.call(this);//实现父级构造函数（也就是类）上的继承
+      this.type="child3";
+    }
+    Child3.prototype=new Parent3();//实现父级原型链对象上的继承
+
+    var s3=new Child3();
+    var s4=new Child3();
+
+    console.log(s3.play,s4.play);
+    s3.play.push(4);
+    console.log(s3.play,s4.play);
+  ```
+  4. 组合优化1
+  - 缺点：子类和父类的构造函数指向的是同一个，即父类的构造函数
+  无法确定构造函数是由父类创造还是由子类创造。s5.__proto__.constructor指向的不是子类Child4而是父类Parent4，不符合要求
+  ```
+    function Parent4(){
+    this.name="parent4";
+      this.play=[1,2,3];
+    }
+
+    function Child4(){
+      Parent4.call(this);//继承构造函数（类）上的属性
+      this.type="child4";
+    }
+    Child4.prototype=Parent4.prototype;//只继承原型链对象上的属性，只做了原型对象上的引用
+    var s5=new Child4();
+    var s6=new Child4();
+
+    console.log(s5 instanceof Child4,s6 instanceof Parent4);//true，没办法判断到底是属于构造函数Child4，还是属于构造函数Parent4
+    console.log(s5.__proto__.constructor);//因为每个s5.__proto__都有一个constructor指向创建他的构造函数，所以判断出来创建他们的构造函数都是Parent4，而不是Child4，原因是Child4.prototype直接指向了Parent4.prototype对象，这个Parent4.prototype.constructor直接指向创建他的构造函数Parent4，所以s5.__proto__.constructor也是直接指向了Parent4
+    console.log(s6.__proto__.constructor);
+  ```
+  5. 组合优化2
+  ```
+  function Parent5(){
+    this.name="parent5";
+    this.play=[1,2,3];
+  }
+
+  function Child5(){
+    Parent5.call(this);//继承构造函数（类）上的属性
+    this.type="child4";
+  }
+  Child5.prototype=Object.create(Parent5.prototype);//通过Object.create()创建中间对象，不仅实现了继承，而且实现了父类和子类原型对象的隔离，，只继承原型链对象上的属性，只做了原型对象上的引用
+  Child5.prototype.constructor=Child5;//给Child5.prototype写一个自己的constructor，避免向上找还找到Parent5
+  //验证
+  var s7=new Child5();
+  console.log(s7 instanceof Child5,s7 instanceof Parent5);//true
+  console.log(s7.__proto__.constructor);//Child5
+  ```
+
+
+
 
 ## 渲染机制类
 1. 什么是DOCTYPE及作用

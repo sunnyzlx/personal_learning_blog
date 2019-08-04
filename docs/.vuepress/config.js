@@ -40,6 +40,7 @@ module.exports = {
                     'JavaScript/hybrid',
                     'JavaScript/vdom',
                     'JavaScript/20道JS原理题',
+                    'JavaScript/testlist',
                     'JavaScript/interview'
                 ]
             },
