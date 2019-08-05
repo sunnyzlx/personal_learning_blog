@@ -402,9 +402,120 @@ var new1=function(F){
   console.log(s7 instanceof Child5,s7 instanceof Parent5);//true
   console.log(s7.__proto__.constructor);//Child5
   ```
+  6. ES6中的继承
+  ```
+  class parent {
+    constructor(name){
+      this.name=name
+    }
+    talk(){
+      console.log('talk')
+    }
+    walk(){
+      console.log('zoulu')
+    }
+  }
+  class child extends parent {
+    constructor(name){
+      super(name)  //用super传递参数，super调用一定要放在子类新增属性的前面，否则报错
+      this.type='es6继承'
+    }
+  }
 
+  let yuanyuan = new child('lala')
+  console.log(yuanyuan)
+  console.log(yuanyuan.name)
+  console.log(yuanyuan.talk())
+  - 注意：如果父类有参数，用super传递给子类。super一定要写在子类定义属性的上面。
+  - 注意：用es6做继承，不管有没有参数需要传递，都需要加super。
+  ```
 
+#### ES5和ES6继承的异同
+   1、相同点。
+   - ES5和ES6都可以实现继承父类，父类原型上的属性和方法。
+   2、不同点
+   - ES5的继承是通过原型、构造函数和call机制来实现的。
+   - ES6是通过class关键字定义类，类之间通过extends关键字实现继承。子类必须在constructor方法中调用super方法，否则新建实例报错。因为子类没有自己的this对象，而是继承了父类的this对象，然后对其进行加工。如果不调用super方法，子类得不到this对象。
 
+## 通信类
+### 什么是同源策略及限制
+   1. 同源策略限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互，这是一个用于隔离潜在恶意文件的安全机制
+   2. 协议，域名，端口，三者有一个不一致，即为不同源
+   3. 限制为
+   - cookie，localStorage和IndexDB无法读取
+   - DOM无法获得
+   - ajax请求无法发送
+### 前后端如何通信
+   - Ajax
+   - webSocket
+   - CORS
+### 如何创建ajax 
+#### XMLHttpRequest对象的工作流程
+```
+util.json=function(options){
+  var opt = {
+    url: '',
+    type: 'get',
+    data: {},
+    success: function(){},
+    error: function(){}
+  }
+  util.extend(opt, options) // 此处应实现一个深拷贝
+  if(opt.url){
+    var xhr=XMLHttpRequest ? new XMLHttpRequest() : new window.ActiveXObject()
+    var url=opt.url,
+        type=opt.type.toUpperCase(),
+        data=opt.data,
+        dataArr=[];
+    for(var k in data){
+      dataArr.push(k+'='+data[k])
+    }
+    if(type==='GET'){
+      url=url + '?' + dataArr.join('&');
+      xhr.open(type, url.replace(/\?$/g, ''), true);
+      xhr.send();
+    }
+    if(type==='POST'){
+      xhr.open(type, url, true);
+      xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+      xhr.send(dataArr.join('&'))
+    }
+    xhr.onload=function(){
+      if(xhr.status===200||xhr.status===304 || xhr.status===206){ //若是媒体资源，增加206状态码，媒体资源比较大，是部分返回
+        var res;
+        if(opt.success && opt.success instanceof Function){
+          res=xhr.responseText;
+          if(typeof res === 'string'){
+            res=JSON.parse(res)
+            opt.success.call(xhr, res)
+          }
+        }
+      }else{
+        if(opt.error && opt.error instanceof Function){
+          opt.error.call(xhr, res)
+        }
+      }
+    }
+  }
+}
+```
+#### 兼容性处理(兼容ie)
+#### 事件的触发条件
+#### 事件的触发顺序
+### 跨域通信的几种方式
+#### JSONP
+   - 原理： 利用script标签的异步加载实现
+```
+
+```
+#### Hash
+   - url中#号后面的部分为hash, hash的变动，你的页面不会刷新
+   - url中?号后面的部分为search， search的改变会刷新页面，故search不可以做跨域通信
+#### postMessage
+   - html5中新增特性，解决跨域通信
+#### webSocket
+#### CORS
+   - 支持跨域通信的ajax， 新增的通信标准
 
 ## 渲染机制类
 1. 什么是DOCTYPE及作用
@@ -450,4 +561,13 @@ var new1=function(F){
 4. 理解哪些语句会放入异步任务队列
 5. 理解语句放入异步任务队列的时间
 ## 页面性能类
-1.
+### 提升页面性能的方法有哪些？
+#### 1.资源压缩合并，减少http请求
+#### 2.非核心代码异步加载
+##### 1）异步加载的方式
+##### 2）异步加载的区别
+#### 3.利用浏览器缓存
+##### 1）缓存的分类
+##### 2）缓存的原理
+#### 4.使用CDN
+#### 5.预解析DNS 

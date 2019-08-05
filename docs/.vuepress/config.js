@@ -32,16 +32,27 @@ module.exports = {
                     'JavaScript/js闭包',
                     'JavaScript/this小结',
                     'JavaScript/js事件循环机制',
+                    'JavaScript/js算法基础',
                     'JavaScript/js算法',
                     'JavaScript/js原型链详解',
                     'JavaScript/js作用域面试题',
+                    'JavaScript/promise',
                     'JavaScript/关于setTimeout的经典面试题',
                     'JavaScript/DOM知识梳理',
+                    'JavaScript/array',
                     'JavaScript/hybrid',
                     'JavaScript/vdom',
                     'JavaScript/20道JS原理题',
                     'JavaScript/testlist',
                     'JavaScript/interview'
+                ]
+            },
+            {
+                title: 'vue',
+                collapsable: false,
+                children: [
+                    ['vue/', 'Introduction'],
+                    'vue/vue面试要点',
                 ]
             },
             {
