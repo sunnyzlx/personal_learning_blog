@@ -36,7 +36,8 @@
    - 网络请求层面 （尽量减少http请求，次数跟时长）
 
 ## js
-   - import与require区别，amd.cmd模块
+   - import与require区别，
+   - AMD与CMD模块化规范
    - promise原理，promise.all，promise.race
    - 宏任务与微任务
    - 深拷贝与浅拷贝

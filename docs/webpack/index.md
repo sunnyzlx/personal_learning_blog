@@ -25,3 +25,17 @@
 ## 2. 模块是什么？
 - 对于webpack来说，项目中的任何文件都可以称之为一个模块
 ## 3. webpack的配置文件有什么作用？
+## webpack构建流程
+   - 初始化参数，从配置文件和shell语句中读到的参数合并，得到最后的参数
+   - 开始编译：用合并得到的参数初始化complier对象，加载是所有配置的插件，执行run方法开始编译
+   - 确定入口，通过entry找到入口文件
+   - 编译模块，从入口文件出发，调用所有配置的loader对模块进行解析翻译，在找到该模块依赖的模块进行处理
+   - 完成模块编译，得到每个模块被翻译之后的最终的内容和依赖关系
+   - 输出资源，根据入口和模块之间的依赖关系，组装成一个个包含多个模块的chunk，在把每个chunk转换成一个单独的文件加载到输出列表
+   - 输出完成，确定输出的路径和文件名，把内容写到文件系统中
+在以上过程中，webpack会在特定的时间点广播出特定的事件，插件在舰艇感兴趣的事件后会执行特定的逻辑，改变webpack的运行结果
+## 如何利用webpack来优化前端性能
+   -  压缩代码。uglifyJsPlugin 压缩js代码， mini-css-extract-plugin 压缩css代码
+   - 利用CDN加速，将引用的静态资源修改为CDN上对应的路径，可以利用webpack对于output参数和loader的publicpath参数来修改资源路径
+   - 删除死代码（tree shaking），css需要使用Purify-CSS
+   - 提取公共代码。webpack4移除了CommonsChunkPlugin (提取公共代码)，用optimization.splitChunks和optimization.runtimeChunk来代替
