@@ -24,40 +24,50 @@ module.exports = {
         nav: [],
         sidebar: [
             {
-                title: 'JavaScript',
-                collapsable: false,
+                title: 'es5',
+                // collapsable: false,
                 children: [
-                    ['JavaScript/', 'Introduction'],
-                    'JavaScript/js类型及其判断',
-                    'JavaScript/js闭包',
-                    'JavaScript/this小结',
-                    'JavaScript/js事件循环机制',
-                    'JavaScript/js算法基础',
-                    'JavaScript/js算法',
-                    'JavaScript/js原型链详解',
-                    'JavaScript/js作用域面试题',
-                    'JavaScript/promise',
-                    'JavaScript/关于setTimeout的经典面试题',
-                    'JavaScript/DOM知识梳理',
-                    'JavaScript/array',
-                    'JavaScript/hybrid',
-                    'JavaScript/vdom',
-                    'JavaScript/20道JS原理题',
-                    'JavaScript/testlist',
-                    'JavaScript/interview'
+                    ['es5/', 'js类型及其判断'],
+                    'es5/this',            
+                    'es5/作用域',
+                    'es5/闭包',
+                    'es5/原型链',
+                    'es5/事件循环机制', 
+                    'es5/setTimeout',
+                    'es5/DOM',              
+                    'es5/array',
+                    'es5/js原理题'
+                ]
+            },
+            {
+                title: 'es6',
+                // collapsable: false,
+                children: [
+                    ['es6/', 'Introduction'],
+                    'es6/let与const',
+                    'es6/promise'
+                ]
+            },
+            {
+                title: 'leetcode',
+                // collapsable: false,
+                children: [
+                    ['leetcode/', 'js算法思想学习'],
+                    'leetcode/js算法例题',
                 ]
             },
             {
                 title: 'vue',
-                collapsable: false,
+                // collapsable: false,
                 children: [
                     ['vue/', 'Introduction'],
                     'vue/vue面试要点',
+                    'vue/vdom'
                 ]
             },
             {
                 title: 'webpack',
-                collapsable: false,
+                // collapsable: false,
                 children: [
                     ['webpack/', 'Introduction'],
                     'webpack/entry',
@@ -68,13 +78,30 @@ module.exports = {
                 ]
             },
             {
-                title: 'workSummary',
-                collapsable: false,
+                title: 'regExp',
+                // collapsable: false,
                 children: [
-                    ['workSummary/', 'Introduction'],
-                    'workSummary/混合开发离线包方案'
+                    ['regExp/', 'Introduction'],
+                    'regExp/匹配规则',
                 ]
-            }
+            },
+            {
+                title: 'work',
+                // collapsable: false,
+                children: [
+                    ['work/', 'Introduction'],
+                    'work/混合开发离线包方案',
+                    'work/hybrid',
+                ]
+            },
+            {
+                title: 'interview',
+                // collapsable: false,
+                children: [
+                    ['interview/', 'testlist'],
+                    'interview/testdetail'
+                ]
+            },
         ]
     }
 }

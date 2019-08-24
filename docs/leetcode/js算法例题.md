@@ -1,4 +1,4 @@
-# js算法
+# js算法例题
 
 ##### 1.  判断一个单词是否是回文？
 
@@ -263,7 +263,6 @@ function selectionSort(data){
   for(var i=0;i<data.length;i++){
     var min=data[i];
     var temp;
-    var index=1;
     for(var j=i+1;j<data.length;j++){
       if(data[j]<min){
         temp=data[j];
@@ -271,10 +270,9 @@ function selectionSort(data){
         min=temp;
       }
     }
-    temp=data[i];
     data[i]=min;
-    data[index]=temp
   }
+  return data
 }
 ```
 - 插入排序：

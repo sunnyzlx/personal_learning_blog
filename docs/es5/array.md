@@ -1,4 +1,4 @@
-# array相关小题
+# array
 
 ## 如何判断数组类型？
   1. arr instanceof Array,  返回true,则为数组类型

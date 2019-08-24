@@ -19,7 +19,7 @@
             // 加入 html 模板任务
             new HtmlWebpackPlugin({
                 // 模板文件
-                template: 'src/index.html',
+                template: './src/index.html',
                 // 打包后文件名称，会自动放到 output 指定的 dist 目录
                 filename: 'index.html'
             })
@@ -37,7 +37,29 @@
         ]
     }
   ```
-### webpack.hotModuleReplacementPlugin
+### webpack.hotModuleReplacementPlugin 开启模块热替换
+  ```
+  module.exports={
+      devServer:{
+          contentBase:'dist',
+          port: 8089,
+          open: true,
+          hot: true,
+          hotOnly: true
+      },
+      plugins:[
+          new webpack.hotModuleReplacementPlugin()
+      ]
+  }
+  ```
+### mini-css-extract-plugin
+  - 这个插件将CSS解压到单独的文件中。它为每个包含CSS的JS文件创建一个CSS文件。extract-text-webpack-plugin该插件在webpack4中不再建议使用
+  ```
+  new MiniCssExtractPlugin({
+    filename: '[name].[contenthash].css',
+    chunkFilename: '[id].css'
+  }),
+  ```
   - oss
 ### copy-webpack-plugin
   - 将src/images下的所有图片复制到dist/images目录
