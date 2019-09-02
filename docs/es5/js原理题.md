@@ -130,10 +130,10 @@ let obj = myNew(person)('chen', 18) // {name: "chen", age: 18}
 // 未添加异步处理等其他边界情况
 // ①自动执行函数，②三个状态，③then
 class Promise {
-  constructor (fn) {
+  constructor (fn(resolve, reject)) {
     // 三个状态
     this.state = 'pending'
-    this. = undefined
+    this.value= undefined
     this.reason = undefined
     let resolve = value => {
       if (this.state === 'pending') {
@@ -154,14 +154,14 @@ class Promise {
       reject(e)
     }
   }
-  // then
+  // then 方法 有两个参数onFulfilled onRejected
   then(onFulfilled, onRejected) {
     switch (this.state) {
       case 'fulfilled':
-        onFulfilled()
+        onFulfilled(this.value);
         break
       case 'rejected':
-        onRejected()
+        onRejected(this.reason);
         break
       default:
     }

@@ -24,7 +24,7 @@ loader, 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身�
 1. css-loader, 会分析项目中所有css文件之间的依赖关系，然后将他们合并成一个css文件
 2. style-loader, 将css-loader处理生成的css文件挂载到页面中的head中
 3. sass-loader, node-sass 和 webpack 是 sass-loader 的依赖模块
-4. postcss-loader, 为css样式添加浏览器厂商前缀，还需要autoprefixer插件配合
+4. postcss-loader, 为css样式自动添加浏览器厂商前缀，还需要autoprefixer插件配合
 ### 加载数据
 1. 可以加载的有用资源还有数据，如 JSON 文件，CSV、TSV 和 XML
 2. 类似于 NodeJS，JSON 支持实际上是内置的，也就是说 import Data from './data.json' 默认将正常运行

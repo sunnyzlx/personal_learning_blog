@@ -519,6 +519,8 @@ util.json=function(options){
    - 支持跨域通信的ajax， 新增的通信标准
 
 ## 渲染机制类
+- 浏览器渲染基本原理解析 https://mp.weixin.qq.com/s/njwpsI-5T2mewPYjNef0jA
+- 浏览器渲染机制 https://www.jianshu.com/p/4bc1a46d7e9a
 1. 什么是DOCTYPE及作用
    - DTD 文档类型定义，xml和html都是一种文档
    - DTD就是告诉浏览器我是什么文档类型，浏览器根据这个来判断要用什么引擎来解析它渲染它
@@ -536,8 +538,8 @@ util.json=function(options){
      - 1）根据HTML结构生成DOM Tree（DOM树）。
      - 2）根据CSS生成CSSOM Tree。
      - 3）将DOM Tree和CSSOM Tree整合形成RenderTree（渲染树）。
-     - 4）根据RenderTree开始渲染和展示。
-     - 5）遇到script时，会执行并阻塞渲染，所以一般将script相关的放到body的最下面
+     - 4）布局Render树 - 然后对渲染树的每个节点进行布局处理，确定其在屏幕上的显示位置
+     - 5）绘制Render树 - 最后遍历渲染树并用UI后端层将每一个节点绘制出来
 3. 重排reflow
    - DOM结构中的各个元素都有自己的盒子（模型），这些都需要浏览器根据各种样式来计算并根据计算结果将元素放到它该出现的位置，这个过程称为reflow。
    - 什么时候会触发Reflow，==怎么避免Feflow==
@@ -581,6 +583,9 @@ util.json=function(options){
       Last-Modified  If-Modified-Since
       Etag If-None-Match
     - 2）缓存的原理
+    - 浏览器缓存机制全攻略 https://mp.weixin.qq.com/s/MqALe2790ucf-7U9RrRlMw
+    - https://mp.weixin.qq.com/s/Oc-JBHO9Wux27pU9hWV8rw
+    - 参考链接：https://www.jianshu.com/p/54cc04190252
   - 4.使用CDN（网络优化，用最快的时间把资源请求过来，让网络快速到达服务端，把资源下载下来，尤其是在页面第一次打开的时候，浏览器缓存起不了任何作用，这时使用CDN效果是非常明显的）
   - 5.预解析DNS 
   - 6.尽量减少DOM操作

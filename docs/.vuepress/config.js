@@ -34,8 +34,14 @@ module.exports = {
                     'es5/原型链',
                     'es5/事件循环机制', 
                     'es5/setTimeout',
-                    'es5/DOM',              
+                    'es5/DOM',
+                    'es5/object',             
                     'es5/array',
+                    'es5/string',
+                    'es5/boolean',
+                    'es5/number',
+                    'es5/math',
+                    'es5/json',
                     'es5/js原理题'
                 ]
             },
@@ -45,7 +51,9 @@ module.exports = {
                 children: [
                     ['es6/', 'Introduction'],
                     'es6/let与const',
-                    'es6/promise'
+                    'es6/generator',
+                    'es6/promise',
+                    'es6/array'
                 ]
             },
             {
@@ -57,12 +65,23 @@ module.exports = {
                 ]
             },
             {
+                title: 'react',
+                // collapsable: false,
+                children: [
+                    ['react/', 'React基础'],
+                    'react/React高级', 
+                    'react/React生命周期', 
+                    'react/项目整体架构设计'
+                ]
+            },
+            {
                 title: 'vue',
                 // collapsable: false,
                 children: [
                     ['vue/', 'Introduction'],
                     'vue/vue面试要点',
-                    'vue/vdom'
+                    'vue/vdom',
+                    'vue/test'
                 ]
             },
             {
@@ -92,6 +111,10 @@ module.exports = {
                     ['work/', 'Introduction'],
                     'work/混合开发离线包方案',
                     'work/hybrid',
+                    'work/防抖与截流',
+                    'work/移动端适配方案',
+                    'work/http相关',
+                    'work/性能优化',
                 ]
             },
             {
