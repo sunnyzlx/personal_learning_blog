@@ -1,0 +1,11 @@
+- 防抖与截流
+- https
+- amd与cmd
+- import与require
+- 浏览器鼠标事件
+- 复习react基础+高级，看官方文档，与vuejs对比学习
+- 学习redux,开启后台项目
+- underscore， jquery, lodash通用工具库， axios 
+- UI库，elementUI antd
+- promise原理，内部实现，手写源码 
+- http通讯原理， 设计模式， bind原理， e 事件对象，es5语法， import()异步加载 1:30

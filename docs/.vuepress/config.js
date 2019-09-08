@@ -49,19 +49,12 @@ module.exports = {
                 title: 'es6',
                 // collapsable: false,
                 children: [
-                    ['es6/', 'Introduction'],
+                    ['es6/', 'es6简介'],
                     'es6/let与const',
+                    'es6/变量的解构赋值',
                     'es6/generator',
                     'es6/promise',
                     'es6/array'
-                ]
-            },
-            {
-                title: 'leetcode',
-                // collapsable: false,
-                children: [
-                    ['leetcode/', 'js算法思想学习'],
-                    'leetcode/js算法例题',
                 ]
             },
             {
@@ -71,7 +64,9 @@ module.exports = {
                     ['react/', 'React基础'],
                     'react/React高级', 
                     'react/React生命周期', 
-                    'react/项目整体架构设计'
+                    'react/redux基础',
+                    'react/redux进阶',
+                    'react/react项目经验总结'
                 ]
             },
             {
@@ -80,20 +75,27 @@ module.exports = {
                 children: [
                     ['vue/', 'Introduction'],
                     'vue/vue面试要点',
-                    'vue/vdom',
-                    'vue/test'
+                    'vue/vdom'
                 ]
             },
             {
                 title: 'webpack',
                 // collapsable: false,
                 children: [
-                    ['webpack/', 'Introduction'],
-                    'webpack/entry',
-                    'webpack/output',
-                    'webpack/loader',
-                    'webpack/plugins',
-                    'webpack/example'
+                    ['webpack/', 'webpack4简介'],
+                    'webpack/webpack基础',
+                    'webpack/webpack进阶',
+                    'webpack/webpack高级',
+                    'webpack/webpack实战',
+                    'webpack/webpack性能优化'
+                ]
+            },
+            {
+                title: 'leetcode',
+                // collapsable: false,
+                children: [
+                    ['leetcode/', 'js算法思想学习'],
+                    'leetcode/js算法例题',
                 ]
             },
             {
