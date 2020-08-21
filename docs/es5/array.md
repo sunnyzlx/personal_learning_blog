@@ -5,6 +5,7 @@
 
 
 ## 静态方法
+- https://www.cnblogs.com/randomlee/p/10619294.html
 - Array.isArray()
 - 判断参数是否为数组，返回布尔值，可弥补typeof运算符的不足
 
@@ -88,21 +89,7 @@ Array.prototype.slice.call({ 0: 'a', 1: 'b', length: 2 })
    
 - concat，slice可变相实现数组复制 
 - map，forEach，filter，some，every都是遍历数组的方式，均不会改变原数组
-- reduce()，reduceRight() 依次处理数组的每个成员，最终累计为一个值
-  > reduce是从左到右处理
-
-  > reduceRight则是从右到左
-  
-  > 两个参数，参数函数，该函数接受以下四个参数，前两个必选，后两个可选，第二个参数，为累积变量指定初值
-  
-  1.累积变量，默认为数组的第一个成员
-  
-  2.当前变量，默认为数组的第二个成员
-  
-  3.当前位置（从0开始）
-  
-  4.原数组
-  
+- reduce()，reduceRight() 依次处理数组的每个成员，最终累计为一个值 
 - indexOf() 返回给定元素在数组中第一次出现的位置，若没有则返回-1, 第二个参数，表示搜索的开始位置
 
 ```
@@ -120,22 +107,16 @@ Array.prototype.slice.call({ 0: 'a', 1: 'b', length: 2 })
      - console.log((123).constructor == Number);  //true
      - console.log(true.constructor == Boolean);  //true
 
-## 如何将类数组转化为数组？
-类数组对象本身不是数组，但却有interator接口，所以可遍历，且具有length属性
-- es6新增的扩展运算符（...）和Array.from()方法，可以直接将类数组转化为真正的数组
-- 扩展运算符和 for of 前提一样，要求对象有interator接口
-- Array.from()可以将任意具有length属性的对象转换为真正的数组
-```
-let divEle = document.querySelectorAll('div')
-let divArr = [];
-for(let item of divEle) {
-    divArr.push(item)
-}
-
-let divArr = [...divEle];
-
-let divArr2 = Array.from(divEle)
-
-let divArr = [].concat.apply([], divEle)
-
-```
+## es6新增的方法
+- Array.from方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括 ES6 新增的数据结构 Set 和 Map）
+- 数组实例的方法（6个）
+  - copyWithin(target, start, end),复制数组的一部分到另一部分
+  - find()和findIndex(),找到符合条件的第一个数组成员，不同是，find()返回该成员，findIndex()返回该成员的索引
+  - indexOf方法无法识别数组的NaN成员，但是findIndex方法可以借助Object.is方法做到
+  - fill(value, start, end),用给定值，填充数组
+  - entries()，keys() 和 values() 用于遍历数组
+  - includes(),检测数组是否包含某个给定值，
+  - indexOf方法有两个缺点，一是不够语义化，它的含义是找到参数值的第一个出现位置，所以要去比较是否不等于-1，表达起来不够直观。二是，它内部使用严格相等运算符（===）进行判断，这会导致对NaN的误判
+  - Map 结构的has方法，是用来查找键名的，比如Map.prototype.has(key)、WeakMap.prototype.has(key)、Reflect.has(target, propertyKey)。
+Set 结构的has方法，是用来查找值的，比如Set.prototype.has(value)、WeakSet.prototype.has(value)
+  - flat()，flatMap() 

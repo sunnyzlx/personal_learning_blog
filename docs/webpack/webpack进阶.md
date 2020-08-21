@@ -69,7 +69,7 @@ npm install --save-dev babel-loader @babel/core  @babel/preset-env
 npm install --save @babel/polyfill
 在代码中引入 import '@babel/polyfill' //@babel/polyfill并没有向代码中导入任何的内容，而是在window对象上挂载了一些全局变量，如Promise， Window.Promise
 {
-  test: '/\.js$/',
+  test: '/\.js?x$/',
   exclude: /(node_modules|bower_components)/,
   use: {
     loader: 'babel-loader',
@@ -78,13 +78,14 @@ npm install --save @babel/polyfill
         chrome: '67'
       },
       presets: [['@babel/preset-env', {
-        useBuiltIns: 'usage' //添加该选项之后，就不需要在项目中import '@babel/polyfill'了，ta会帮助我们自动引入
+        useBuiltIns: 'usage' 
+        //添加该选项之后，就不需要在项目中import '@babel/polyfill'了，ta会帮助我们自动引入
       }]]
     }
 }
 ```
-- 对于软件库/工具，我们可以使用@babel/plugin-transfrom-runtime
-- @babel/plugin-transfrom-runtime ?? @babel/polyfill会造成全局污染，而@babel/plugin-transfrom-runtime会以闭包的形式向组件注入内容，不会造成全局污染，比较适合开发第三方类库，或工具库，UI库等
+- 对于软件库/工具，我们可以使用@babel/plugin-transform-runtime
+- @babel/plugin-transform-runtime ?? @babel/polyfill会造成全局污染，而@babel/plugin-transform-runtime会以闭包的形式向组件注入内容，不会造成全局污染，比较适合开发第三方类库，或工具库，UI库等
 - babel的学习，是个大部头，以后可以深入了解一下
 ```
 npm install --save-dev @babel/plugin-transform-runtime

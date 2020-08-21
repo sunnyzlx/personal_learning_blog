@@ -104,3 +104,53 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList)
 ```
 - TodoList是一个UI组件，当使用connect把一些数据和业务逻辑与TodoList相结合时，返回的内容其实就是一个容器组件
+## 手写简版React-Redux
+```
+import React, { useState, useContext, useEffect } from "react";
+// import { bindActionCreators } from "redux";
+
+const Context = React.createContext();
+
+export function Provider({ store, children }) {
+  return <Context.Provider value={store}>{children}</Context.Provider>;
+}
+
+export const connect = (
+  mapStateToProps = state => state,
+  mapDispatchToProps = {},
+) => Cmp => props => {
+  const store = useContext(Context);
+  const getMoreProps = () => {
+    console.log(store.getState())
+    const stateProps = mapStateToProps(store.getState());
+    const dispatchProps = bindActionCreators(
+      mapDispatchToProps,
+      store.dispatch,
+    );
+    return {
+      ...stateProps,
+      ...dispatchProps,
+    };
+  };
+  useEffect(() => {
+    store.subscribe(() => {
+      setMoreProps({ ...moreProps, ...getMoreProps() });
+    });
+  }, []);
+  const [moreProps, setMoreProps] = useState(getMoreProps());
+  return <Cmp {...props} {...moreProps} />;
+};
+
+function bindActionCreator(creator, dispatch) {
+  return (...args) => dispatch(creator(...args));
+}
+//{add: ()=>({type:'add'}), minus: ()=>({type: 'minus})
+function bindActionCreators(actionCreators, dispatch) {
+  let obj = {};
+  for (let key in actionCreators) {
+    obj[key] = bindActionCreator(actionCreators[key], dispatch);
+  }
+  return obj;
+}
+
+```

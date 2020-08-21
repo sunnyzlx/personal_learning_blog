@@ -1,5 +1,74 @@
 # React基础
 
+## 
+- react负责编译jsx语法，负责逻辑控制，将数据=>vdom
+- reactDom负责渲染实际dom,vdom=>dom
+- React使用JSX来描述UI
+- 组件是抽象的独立功能模块, 组件有两种形式:function组件和class组件
+- class组件通常拥有状态和生命周期，继承于Component，实现render方法
+- 函数组件通常无状态，仅关注内容展示，返回渲染结果即可
+- 类组件中的状态管理,class组件使用state和setState维护状态
+- setState特性讨论:
+  - 用setState更新状态⽽不能直接修改
+  - setState是批量执⾏的，因此对同⼀个状态执⾏多次只起一次作用，多个状态更新可以放在同一个setState中进⾏
+  - setState通常是异步的，因此如果要获取到最新状态值有以下三种方式:
+    - 传递函数给setState方法
+    - 使⽤定时器
+    - 原⽣事件中修改状态
+  - setState只有在合成事件和⽣命周期函数中是异步的， 在原生事件如addEventListener和setTimeout、setInterval 中都是同步的
+- 函数组件通过hooks api维护状态
+- 事件回调函数注意绑定this指向，常⻅三种⽅方法:
+  - 构造函数中绑定并覆盖:this.change= this.change.bind(this)
+  - ⽅法定义为箭头函数:change=()=>{}
+  - 事件中定义为箭头函数:onChange={()=>this.change()}
+- react⾥遵循单项数据流，没有双向绑定，输入框要设置value 和onChange，称为受控组件
+- 组件通信
+  - Props属性传递可用于⽗⼦组件相互通信
+  - 如果⽗组件传递的是函数，则可以把子组件信息传入⽗组件，这个常称为状态提升
+  - context,跨层级组件之间通信,主要用于组件库开发中
+- 生命周期
+  - 组件运行的特定阶段会自动执行的方法,10个
+  - 挂载
+    - constructor(),  初始化内部state,为事件处理函数绑定实例
+    - static getDerivedStateFromProps()
+    - render()
+    - componentDidMount()，数据请求，添加订阅，定时器
+  - 更新
+    - static getDerivedStateFromProps()
+    - shouldComponentUpdate()
+    - render()
+    - getSnapShotBeforeUpdate()
+    - componentDidUpdate()
+  - 卸载
+    - componentWillUnmount()
+  - 错误捕获
+    - static getDerivedStateFromError()
+    - componentDidCatch()
+- class静态属性
+  - defaultProps: 定义props的默认值
+  - displayName
+  - propTypes: 进行类型检查，可以捕获大量错误
+- 实例方法
+  - setState()，异步批量执行
+  - forceUpdate()
+- 实例属性
+  - state
+  - props
+- hooks
+  - Hook 是一些可以让你在函数组件里“钩入” React state 及生命周期等特性的函数
+  - hooks可以让你在不编写class的情况下使用state和一些其他的react特性
+  - 优点：可以复用状态逻辑，使代码更加简洁，容易理解
+- useState
+  - 在function组件中使用useState,可以为组件添加一些内部state
+  - useState接收初始state作为唯一参数，返回2个值，当前状态和更新函数
+- useEffect
+  - useEffect给函数组件增加了操作副作用的能力
+  - 副作用： 数据请求，添加订阅，手动修改dom
+  - useEffect接收一个函数来执行副作用，返回一个函数来清除副作用
+- Hook 使用规则
+  - 只能在函数最外层调用 Hook。不要在循环、条件判断或者子函数中调用
+  - 只能在 React 的函数组件中调用 Hook。不要在其他 JavaScript 函数中调用。还可以在自定义的 Hook 中调用
+  
 ## React简介
 - fackbook推出，函数式编程，React16之后版本及其优化的底层实现，又称React Fiber
 - 在底层的事件循环中加入了优先级的概念，可以利用事件循环的碎片时间加入执行一些高优先级的用户交互，提高Reactjs使用过程中的用户体验
@@ -8,7 +77,7 @@
 - 声明式编码
   - MV*框架：只关注视图层view+数据层model即可，改变数据，更新UI, 不需要关注中间的实现过程（Vue, React）
 - 组件化编码
-- 高效，，高效的DOM，diff算法，最小化页面重绘
+- 高效的DOM，diff算法，最小化页面重绘
 - 单向数据流（vue中表单，v-model中是双向的）
 
 ## React脚手架
@@ -19,6 +88,9 @@ npx create-react-app my-app
 cd my-app
 npm start
 ```
+- npx的作用
+  - 调用项目安装的模块
+  - 避免全局安装模块
 ## Yarn介绍
 - yarn 是新一代包管理工具
 
@@ -72,6 +144,11 @@ dangerouslySetInnerHtml={{__html: item}}
   - 事件绑定时，需要通过bind(this)对函数的执行上下文进行变更
   - 通过this.setState()传入一个对象的形式，来对this.state中具体的数据项进行变更
   - immutable的概念，state，不允许我们做任何的改变，如果要改，就去拷贝一个副本，去对副本做修改，因为直接修改state中的数据，会影响后面的性能优化
+
+## 组件
+- 函数组件，本质：javaScript函数，接收唯一参数props对象，返回一个React对象
+- 所有 React 组件都必须像纯函数一样保护它们的 props 不被更改
+- “纯函数”，因为该函数不会尝试更改入参，且多次调用下相同的入参始终返回相同的结果
 
 ## 组件拆分与组件间传值
 - 父组件通过属性的方式向子组件传参

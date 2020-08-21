@@ -64,7 +64,7 @@ const config = {
 ### 用法
 - output是一个对象
 - filename，定义输出文件的文件名
-- path，定义目标输出目录的绝对路径 ?? 路径有点问题
+- path，定义目标输出目录的绝对路径
 ```
 const config = {
   output = {
@@ -157,6 +157,30 @@ __webpack_public_path__ = myRuntimePublicPath
   - 为css样式自动添加浏览器厂商前缀，还需要autoprefixer插件配合 ?? 配置失效
 - 字体文件（eot|ttf|svg）
   - file-loader， 将字体文件直接从src目录移至dist目录即可
+
+### CSS分离
+- extract-text-webpack-plugin
+- 它会将所有的入口 chunk(entry chunks)中引用的 *.css，移动到独立分离的 CSS 文件。因此，你的样式将不再内嵌到 JS bundle 中，而是会放到一个单独的 CSS 文件（即 styles.css）当中。 如果你的样式文件大小较大，这会做更快提前加载，因为 CSS bundle 会跟 JS bundle 并行加载
+```
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
+      }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin("styles.css"),
+  ]
+}
+```
 ### CSS模块化 (CSS MODULE) ??
 - 解决CSS全局作用域问题，样式冲突(污染)问题
 

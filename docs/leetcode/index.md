@@ -30,7 +30,28 @@
   }
 ```
 #### 计算二进制字串
-
+```
+function a(s) {
+      let r = [];
+      let match = (str) => {
+        let j = str.match(/^(0+|1+)/)[0]
+        let o = (j[0] ^ 1).toString().repeat(j.length)
+        let reg = new RegExp(`^(${j}${o})`)
+        if (reg.test(str)) {
+          return RegExp.$1
+        } else {
+          return ''
+        }
+      }
+      for (let i = 0; i < s.length - 1; i++) {
+        let sub = match(s.slice(i))
+        if (sub) {
+          r.push(sub)
+        }
+      }
+      console.log(r)
+    };
+```
 ### 数组 
 #### 电话号码的组合（公式运算）
 #### 卡牌分组（归类运算）
@@ -45,7 +66,7 @@
 #### 快速排序
 #### 冒泡排序
 ```
-// 原理： 比较两元素大小，然后换位置
+// 原理： 相邻两两比较，然后换位置
 function bubbleSort(arr){
   for(let i=arr.length-1, temp; i>0; i--){ //定义每次循环的遍历次数，即边界
     for(let j=0; j<i; j++){ //定义从当前位置遍历到哪个边界
@@ -249,8 +270,30 @@ export function firstw(arr){
     return arr.length? arr.pop()+1: 1   
   }
 ```
-### 递归 ***** 本质
+### 递归 ***** 
+- 本质：每一个处理过程都是相同的，输入和输出是相同的，处理次数未知
 #### 复原IP地址
+```
+export default (str) => {
+  //保存所有符合条件的ip
+  let r = [];
+  //递归函数
+  let search = (cur, sub) => {
+    if(cur.length === 4 && cur.join('') === str){
+      r.push(cur.join('.'))
+    }else{
+      for(let i=0,len=Math.min(3, sub.length),tmp; i<len;i++){
+        tmp= sub.substr(0, i+1);
+        if(tmp>=0 && tmp<256){
+          search(cur.concat([tmp]),sub.substr(i+1))
+        }
+      }
+    }
+  }
+  search([], str);
+  return r;
+}
+```
 #### 与所有单词相关联的字符串
 ## 数据结构（6）
 ### 堆 ****
@@ -262,15 +305,7 @@ export function firstw(arr){
 ### 队列 ****
 #### 设计循环队列
 #### 任务调度器
-### 链表
-#### 排序链表
-#### 环形链表
-### 矩阵
-#### 螺旋矩阵
-#### 旋转图像
-### 二叉树
-#### 对称二叉树
-#### 验证二叉树
+
 ## 算法进阶（2）
 ### 贪心算法
 #### 买卖股票的最佳时机
@@ -278,3 +313,23 @@ export function firstw(arr){
 ### 动态规划
 #### 不同路径
 #### k站中转内最便宜的航班
+
+#### js手写map(方法)
+```
+Array.prototype.newMap = function(fn, context){
+  let arr = this;
+  let result = [];
+  for(let i=0; i<arr.length; i++){
+    result.push(fn.call(context, arr[i], i, arr))
+  }
+  return result;
+}
+```
+#### 求取a,b的最大公约数
+export default function gcd(a,b){
+  if(b===0){
+    return a;
+  }else{
+    return gcd(b, a%b)
+  }
+}

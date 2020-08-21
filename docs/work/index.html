@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="file">File progress: </label><br />
+  <progress id='file' max='100' value='70'>70% completed</progress>
+  <script>
+    function upload(blobOrFile){
+      let xhr = new XMLHttpRequest()
+      xhr.open('POST', 'http://localhost/server', true)
+      
+      let progressBar = document.getElementById('file')
+      xhr.onload = () => {
+        xhr.upload.progress = e => {
+          if(e.lengthComputable){
+            progressBar.value = (e.loaded/e.total) *100
+            progressBar.textContent = progressBar.value
+          }
+        }
+      }
+      xhr.send(blobOrFile)
+    }
+    upload(new Blob(['hello world'], {type: 'text/plain'}))
+
+
+
+
+
+
+
+
+
+
+
+
+  //  let xhr = new XMLHttpRequest()
+  //  let url = '/server'
+  //  //请求超时的回调
+  //  xhr.ontimeout = () => {
+  //    console.log(`${url} timed out`);
+  //  }
+  //  //HTTP 请求发出的回调
+  //  xhr.onloadstart = () => {}
+  //  //HTTP 请求完成（不管成功还是失败）的回调
+  //  xhr.onloadend = () => {}
+  //  //请求成功完成的回调
+  //  xhr.onload = () => {
+  //    if(xhr.onreadystatechange === 4){
+  //      if(xhr.status === 200){
+  //        console.log(xhr.response);
+  //      }else{
+  //        console.log(xhr.statusText);
+  //      }
+  //    }
+  //  }
+   //请求中止的回调
+  //  xhr.onabort = () => {
+  //    console.log('the request was aborted');
+  //  } 
+  //  //请求失败的回调
+  //  xhr.onerror = () =>{
+  //    console.log(xhr.statusText);
+  //  }
+
+  //  //正在发送和加载数据的回调，
+  //  //只有progress事件的监听函数有参数，其他函数都没有参数。
+  //  xhr.onprogress = e => {
+  //    console.log(e.loaded); //已经传输的数据量
+  //    console.log(e.total); //已经传输的数据量
+  //    console.log(e.lengthComputable); //返回一个布尔值，表示加载的进度是否可以计算
+  //  }
+
+  //  xhr.open('GET', url, true)
+  //  xhr.responseType = 'json'
+
+   //表示跨域请求时，用户信息（比如 Cookie 和认证的 HTTP 头信息）
+   //是否会包含在请求之中，默认为false
+   //如果需要跨域 AJAX 请求发送 Cookie，需要withCredentials属性设为true。
+   // 注意，同源的请求不需要设置这个属性
+   //为了让这个属性生效，服务器必须显式返回Access-Control-Allow-Credentials这个头信息
+   //Access-Control-Allow-Credentials: true
+   //注意，脚本总是遵守同源政策，无法从document.cookie或者 HTTP 回应的头信息之中，
+   //读取跨域的 Cookie，withCredentials属性不影响这一点。
+  //  xhr.withCredentials = true
+
+  //  //AJAX 文件上传
+  //  xhr.upload.progress
+
+  //  xhr.timeout = 10 * 1000
+  // //  xhr.send(null)
+  </script>
+</body>
+</html>

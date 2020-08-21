@@ -20,7 +20,7 @@
   - shouldComponentUpdate组件被更新之前，自动被执行，它要求返回一个布尔类型的返回结果
   - componentWillUpdate组件被更新之前，自动被执行，且在shouldComponentUpdate执行之后被执行，且shouldComponentUpdate返回true才执行，返回false就不会执行了
   - componentDidUpdate组件更新完成之后，自动被执行
-  - componentWillReceiveProps执行条件：一个组件要从父组件接收参数，执行时刻，如果这个组件第一次存在于父组件中，不会执行，如果这个组件之前已经存在于父组件中，才会执行
+  - componentWillReceiveProps执行条件：一个组件要从父组件接收参数，执行时刻，如果这个组件第一次存在于父组件中，不会执行，如果这个组件之前已经存在于父组件中，才会执行(只有在挂载的组件接收到的props发生变化的时候，才会执行)
 - Unmounting组件被卸载的过程
   - componentWillUnmount组件即将从页面中被剔除的时候，自动被执行
 

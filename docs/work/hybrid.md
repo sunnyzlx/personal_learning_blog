@@ -1,4 +1,5 @@
 # hybrid
+- https://juejin.im/post/6844903904002457614
 ## hybrid是什么？
 ### hybrid即“混合”，即前端和客户端的混合开发，某些环节也可能涉及到server端
 ## 为何用hybrid?

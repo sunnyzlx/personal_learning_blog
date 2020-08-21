@@ -38,3 +38,65 @@
 - store.dispatch, 帮助我们派发action,这个action会传递给store
 - store.getState, 可以帮助我们获取到store中所有的数据内容
 - store.subscribe, 可以让我们订阅store的改变，当store发生改变，store.subscribe()接收的回调函数就会被执行
+## 手写简版redux
+```
+export function createStore(reducer, enhancer) {
+  if (enhancer) {
+    return enhancer(createStore)(reducer);
+  }
+
+  let currentState = undefined;
+  let currentListeners = [];
+  function getState() {
+    return currentState;
+  }
+
+  function dispatch(action) {
+    currentState = reducer(currentState, action);
+    currentListeners.map(lis => lis());
+    return action;
+  }
+
+  function subscribe(listener) {
+    currentListeners.push(listener);
+  }
+  dispatch({ type: "IMMOCC/KKKREDUX" });
+  return {
+    getState,
+    dispatch,
+    subscribe,
+  };
+}
+
+export function applyMiddleware(...middlewares) {
+  return createStore => (...args) => {
+    const store = createStore(...args);
+
+    const midAPi = {
+      getState: store.getState,
+      dispatch: store.dispatch,
+    };
+
+    const middlewareChain = middlewares.map(mw => mw(midAPi));
+
+    const dispatch = compose(...middlewareChain)(store.dispatch);
+
+    return {
+      ...store,
+      dispatch,
+    };
+  };
+}
+
+function compose(...funcs) {
+  const len = funcs.length;
+  if (len === 0) {
+    return arg => arg;
+  } else if (len === 1) {
+    return funcs[0];
+  } else {
+    return funcs.reduce((a, b) => (...args) => b(a(...args)));
+  }
+}
+
+```
