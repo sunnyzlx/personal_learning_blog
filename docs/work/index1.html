@@ -2,11 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="./myvue.js"></script>
+  <script>
+    (function () {
+    var dpr = window.devicePixelRatio;
+    var meta = document.createElement('meta');
+    var scale = 1/dpr
+    meta.setAttribute('name', 'viewport');
+    meta.setAttribute('content', 'width=device-width, user-scalable=no, initial-scale=' + scale +
+      ', maximum-scale=' + scale + ', minimum-scale=' + scale);
+    document.getElementsByTagName('head')[0].appendChild(meta);
+    // 动态设置的缩放大小会影响布局视口的尺寸
+      function resize() {
+      var deviceWidth  = document.documentElement.clientWidth;
+      document.documentElement.style.fontSize = (deviceWidth / 10) +'px';
+         }
+    resize();
+    window.onresize = resize;
+    console.log(document.documentElement.clientWidth)
+  })()
+
+  </script>
 </head>
 <body>
+  <div id="app" style="width: 200px;height: 200px;background: red;"></div>
   <!-- <div id="root">
     {{name}}
     <div>{{age}}</div>
@@ -22,43 +42,7 @@
     //     test: '测试数据'
     //   }
     // })
-    
-    function ListNode(val){
-  this.val = val
-  this.next = null
-}
-let arr1 = [1,2,3,4,5]
-
-class nodeList{
-  constructor(arr){
-    this.head = new ListNode(arr.shift())
-    let cur = this.head
-    arr.forEach(item=>{
-      cur.next = new ListNode(item)
-      cur = cur.next
-    })
-    return this.head
-  }
-}
-let head = new nodeList(arr1)
-
-var reverseList = function(head) {
-  // 如果测试用例只有一个节点 或者 递归到了尾节点，返回当前节点 
-  if(!head || !head.next) return head;
-  // 存储当前节点的下一个节点
-  let next = head.next;
-  let reverseHead = reverseList(next);
-  // 断开 head ，如图闪电⚡️标记处
-  head.next = null;
-  // 反转，后一个节点连接当前节点
-  next.next = head;
-  console.log('reverseHead: ', reverseHead)
-  return reverseHead;
-};
-
-console.log(reverseList(head))
-
-
+  
   </script>
 </body>
 </html>

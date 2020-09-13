@@ -137,7 +137,10 @@ Encoding:gzip.deflate.如果请求消息中没有设置这个域,服务器假定
   - https://baijiahao.baidu.com/s?id=1654225744653405133&wfr=spider&for=pc
   - https://juejin.im/entry/6844903638532358151
   - https://juejin.im/post/6844903748918050829
-
+  - https://juejin.im/post/6844903844678205447#heading-24
+  - http与https-- https://www.jianshu.com/p/1afebe13c63e
+  - TCP 重传、滑动窗口、流量控制、拥塞控制
+    - https://www.jianshu.com/p/5b07a2f05771
 ### 10.host文件以及host的作用
 - https://www.cnblogs.com/huhuxixi/p/10602977.html
 - 加快域名解析
@@ -145,6 +148,9 @@ Encoding:gzip.deflate.如果请求消息中没有设置这个域,服务器假定
 - 方便局域网用户
 - 屏蔽网站
 - 企业开发过程中，使用本地域名代替繁琐的Ip地址进行开发
+
+
+
 function shuffle(arr){
   let a = arr.slice()
   let len = a.length

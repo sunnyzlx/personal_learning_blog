@@ -105,7 +105,7 @@
   }
   then(onFulfilled, onRejected){
     onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : value => value
-    onRejected = typeof onRejected === 'function' ? onRejected : value => value
+    onRejected = typeof onRejected === 'function' ? onRejected : reason =>{ throw reason }
     let promise2 = new Promise((resolve, reject)=>{
       if(this.state === 'fulfilled'){
         setTimeout(() => {

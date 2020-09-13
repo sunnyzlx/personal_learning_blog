@@ -54,3 +54,7 @@ module.exports = function(source){
   ### webpack的模块加载机制
   - https://juejin.im/post/6844903574506307597
   - https://segmentfault.com/a/1190000020918297?utm_source=tag-newest
+
+  ### optimization.runtimeChunk 具体作用是什么？
+  - 优化持久化缓存的, runtime 指的是 webpack 的运行环境(具体作用就是模块解析, 加载) 和 模块信息清单, 模块信息清单在每次有模块变更(hash 变更)时都会变更, 所以我们想把这部分代码单独打包出来, 配合后端缓存策略, 这样就不会因为某个模块的变更导致包含模块信息的模块(通常会被包含在最后一个 bundle 中)缓存失效. optimization.runtimeChunk 就是告诉 webpack 是否要把这部分单独打包出来.
+  - runtimeChunk ，作用是将包含chunks映射关系的list单独从app.js里提取出来，因为每一个chunk的id基本都是基于内容hash出来的，所以你每次改动都会影响它，如果不把它提取出来的话，等于app.js每次都会改变，缓存就失效了。在使用 CommonsChunkPlugin的时候，我们也通常把webpack runtime 的基础函数提取出来，单独作为一个chunk,毕竟code splitting想把不变的代码单独抽离出来，方便浏览器缓存，提升加载速度。其实就是单独分离出webpack的一些运行文件

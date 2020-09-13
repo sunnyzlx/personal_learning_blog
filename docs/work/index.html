@@ -92,6 +92,23 @@
 
   //  xhr.timeout = 10 * 1000
   // //  xhr.send(null)
+  function backtrack(list,tmp, nums){
+  if(tmp.length===nums.length){
+    return list.push([...tmp])
+  }
+  for(let i=0,len=nums.length;i<len;i++){
+    if(tmp.includes(nums[i])) continue
+    tmp.push(nums[i])
+    backtrack(list,tmp,nums)
+    tmp.pop()
+  }
+}
+var permute = function(nums) {
+  let list = []
+  backtrack(list, [], nums)
+  return list
+};
+console.log(permute([1,2,3]))
   </script>
 </body>
 </html>
