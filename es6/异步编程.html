@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>异步编程 | 个人学习博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/personal_learning_blog/logo.png">
+    <link rel="manifest" href="/personal_learning_blog/manifest.json">
+    <link rel="apple-touch-icon" href="/personal_learning_blog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/personal_learning_blog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="个人学习博客">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/personal_learning_blog/assets/css/0.styles.d89bb2b8.css" as="style"><link rel="preload" href="/personal_learning_blog/assets/js/app.74e3015b.js" as="script"><link rel="preload" href="/personal_learning_blog/assets/js/2.6c17bd23.js" as="script"><link rel="preload" href="/personal_learning_blog/assets/js/44.14da4196.js" as="script"><link rel="prefetch" href="/personal_learning_blog/assets/js/10.f3dfdda0.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/100.6fe8a05c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/101.62fa532d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/102.2b529457.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/103.2096c698.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/104.3d417a3f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/105.dd8445dd.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/106.21732a46.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/107.190b9142.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/108.12c56ec1.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/11.15e025ca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/12.3c465d6f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/13.01fa0ab2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/14.228b20df.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/15.e051af75.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/16.b6cd45b2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/17.04b92cfa.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/18.f213c6d2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/19.731e1965.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/20.37dd4851.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/21.4539f92b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/22.ff177489.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/23.337464b7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/24.c615303b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/25.6a702dd7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/26.0c25b06b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/27.36993a49.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/28.ff6e6e2f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/29.687807da.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/3.81a0a7fb.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/30.c6db1f4d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/31.2342ba6a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/32.8198781b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/33.b238ec12.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/34.69e7f1b8.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/35.5a58ffe8.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/36.c925e579.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/37.cba0c296.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/38.3438e861.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/39.bdeebabe.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/4.ba3164ba.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/40.5264cfc2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/41.7a3922a5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/42.f93f3c7f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/43.9cb47d07.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/45.d58f54ea.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/46.605c4244.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/47.f81de92d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/48.c24766f9.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/49.e0e93f9a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/5.75a3592b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/50.c37731f2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/51.5daa5256.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/52.9901f9c7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/53.7488a95a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/54.96d1df40.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/55.f40beac1.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/56.596340de.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/57.796601c5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/58.879319ae.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/59.4ca05c3d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/6.0377ba0c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/60.a7c4a633.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/61.9c4a99c3.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/62.a46d12fe.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/63.108ac59f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/64.18e7e87f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/65.ff114422.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/66.8d316103.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/67.09533e88.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/68.37810e5e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/69.71fadcfc.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/7.c5829170.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/70.76b6f674.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/71.2ba4e8cd.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/72.4f5b9f9b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/73.81464a39.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/74.66c11559.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/75.d5e0ec17.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/76.4a1d1e39.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/77.a29f54e9.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/78.2a8dd139.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/79.ab2d8390.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/8.08326ec3.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/80.a905e17b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/81.976246d0.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/82.43e2d4f4.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/83.e0dce43e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/84.fba59f59.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/85.ee892391.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/86.78db9fc4.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/87.b48f406e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/88.75767c0b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/89.86e0154c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/9.28a7790b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/90.db1e0351.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/91.c39dcc6c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/92.300d0ab2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/93.793d24d5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/94.a43aed3f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/95.7d193dca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/96.67e5317e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/97.8e7acaca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/98.79f74317.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/99.f82e0052.js">
+    <link rel="stylesheet" href="/personal_learning_blog/assets/css/0.styles.d89bb2b8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/personal_learning_blog/" class="home-link router-link-active"><!----> <span class="site-name">个人学习博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"> <a href="https://github.com/sunnyzlx/personal_learning_blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"> <a href="https://github.com/sunnyzlx/personal_learning_blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es5</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>es6</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/personal_learning_blog/es6/" aria-current="page" class="sidebar-link">es6简介</a></li><li><a href="/personal_learning_blog/es6/let与const.html" class="sidebar-link">let与const</a></li><li><a href="/personal_learning_blog/es6/变量的解构赋值.html" class="sidebar-link">变量的解构赋值</a></li><li><a href="/personal_learning_blog/es6/promise.html" class="sidebar-link">promise</a></li><li><a href="/personal_learning_blog/es6/异步编程.html" class="active sidebar-link">异步编程</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/personal_learning_blog/es6/array.html" class="sidebar-link">array</a></li><li><a href="/personal_learning_blog/es6/set与map.html" class="sidebar-link">set与map</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>react</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>wechat</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>leetcode</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>work</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>interview</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="异步编程"><a href="#异步编程" class="header-anchor">#</a> 异步编程</h1> <ul><li>回调函数</li> <li>事件监听</li> <li>发布/订阅</li> <li>Promise 对象</li> <li>Generator 函数</li> <li>async 函数</li></ul> <h3 id="回调函数"><a href="#回调函数" class="header-anchor">#</a> 回调函数</h3> <ul><li>回调函数的优点是简单、容易理解和实现，</li> <li>缺点是不利于代码的阅读和维护，各个部分之间高度耦合（coupling），使得程序结构混乱、流程难以追踪（尤其是多个回调函数嵌套的情况），而且每个任务只能指定一个回调函数</li></ul> <h3 id="事件监听"><a href="#事件监听" class="header-anchor">#</a> 事件监听</h3> <ul><li>采用事件驱动模式。异步任务的执行不取决于代码的顺序，而取决于某个事件是否发生</li> <li>优点是比较容易理解，可以绑定多个事件，每个事件可以指定多个回调函数，而且可以“去耦合”（decoupling），有利于实现模块化。</li> <li>缺点是整个程序都要变成事件驱动型，运行流程会变得很不清晰。阅读代码的时候，很难看出主流程</li></ul> <h3 id="发布-订阅-观察者模式"><a href="#发布-订阅-观察者模式" class="header-anchor">#</a> 发布/订阅(观察者模式)</h3> <ul><li>这种方法的性质与“事件监听”类似，但是明显优于后者。因为可以通过查看“消息中心”，了解存在多少信号、每个信号有多少订阅者，从而监控程序的运行</li></ul> <h3 id="异步操作的流程控制"><a href="#异步操作的流程控制" class="header-anchor">#</a> 异步操作的流程控制</h3> <ul><li>如果有多个异步操作，就存在一个流程控制的问题：如何确定异步操作执行的顺序，以及如何保证遵守这种顺序</li> <li>串行执行</li> <li>并行执行</li> <li>并行与串行的结合</li></ul> <h3 id="promise-对象"><a href="#promise-对象" class="header-anchor">#</a> Promise 对象</h3> <ul><li>Promise 对象就是为了解决这个问题而提出的。它不是新的语法功能，而是一种新的写法，允许将回调函数的嵌套，改成链式调用</li> <li>Promise 的写法只是回调函数的改进，使用then方法以后，异步任务的两段执行看得更清楚了，除此以外，并无新意。</li> <li>Promise 的最大问题是 <strong>代码冗余</strong>，原来的任务被 Promise 包装了一下，不管什么操作，一眼看去都是一堆then，原来的语义变得很不清楚</li></ul> <h3 id="generator-函数"><a href="#generator-函数" class="header-anchor">#</a> Generator 函数</h3> <ul><li>Generator 函数的最大特点：可以暂停执行和恢复执行</li> <li>它可以用看似完全同步的代码（除了yield关键字本身），去书写异步流程</li></ul> <h4 id="generator-函数可以作为异步编程的完整解决方案原因"><a href="#generator-函数可以作为异步编程的完整解决方案原因" class="header-anchor">#</a> Generator 函数可以作为异步编程的完整解决方案原因：</h4> <ul><li>可以暂停执行和恢复执行</li> <li>函数体内外的数据交换
+<ul><li>next返回值的 value 属性，是 Generator 函数向外输出数据；next方法还可以接受参数，向 Generator 函数体内输入数据</li></ul></li> <li>错误处理机制
+<ul><li>Generator 函数内部还可以部署错误处理代码，捕获函数体外抛出的错误</li></ul></li></ul> <h3 id="async-函数"><a href="#async-函数" class="header-anchor">#</a> async 函数</h3> <h4 id="async-函数是什么"><a href="#async-函数是什么" class="header-anchor">#</a> async 函数是什么？</h4> <ul><li>async function本质上就是生成器+promise+run(..)模式的语法糖；它们底层的运作方式是一样的！</li> <li>生成器yield出Promise，然后其控制生成器的迭代器来执行它</li> <li>组合Promise和看似同步的流程控制代码</li></ul> <h3 id="async原理"><a href="#async原理" class="header-anchor">#</a> async原理</h3> <div class="language- extra-class"><pre class="language-text"><code>const fs = require('fs')
+
+function readFile(filename){
+  return new Promise((resolve, reject)=&gt;{
+    fs.readFile('./store.js', 'utf-8', (err, data)=&gt;{
+      if(!err){
+        return resolve(data)
+      }
+    })
+  })
+}
+
+// async function fn(...args){
+//   const data = await readFile('./store.js')
+//   console.log(data)
+// }
+fn()
+function fn(...args){
+  function spawn(genF){
+    return new Promise((resolve, reject)=&gt;{
+      const gen = genF()
+      function step(nextF){
+        let next
+        try{
+          next = nextF()
+        }catch(e){
+          return reject(e)
+        }
+        if(next.done){
+          return resolve(next.value)
+        }
+        Promise.resolve(next.value).then(v=&gt;{
+         step(()=&gt;gen.next(v))
+        }).catch(e=&gt;{
+          step(()=&gt;gen.throw(e))
+        })
+      }
+      step(()=&gt;gen.next(undefined))
+    })
+  }
+  return spawn(function *(){
+    const data = yield readFile('./store.js')
+    console.log(data)
+  })
+}
+</code></pre></div><ul><li>异步流程控制,执行一组promise函数，执行方式，串行，并行，控制最大并发数执行，使用原生方法，promise方法，即async/await实现</li></ul> <div class="language- extra-class"><pre class="language-text"><code>const fs = require('fs')
+
+function promisify(fn, ctx){
+  return (...args) =&gt;{
+    return new Promise((resolve, reject)=&gt;{
+      fn.apply(ctx, [...args, 'utf-8', (err, data)=&gt;{
+        if(err) return reject(err)
+        return resolve(data)
+      }])
+    })
+  }
+}
+const readFile = promisify(fs.readFile)
+
+async function fn(filename){
+  const data = await readFile(filename)
+  console.log(data)
+}
+// fn('./proxy.js')
+
+let items = [1,2,3,4,5]
+let results = []
+
+function series(item){
+  if(item){
+    setTimeout(()=&gt;{
+      console.log('arg: ', item)
+      results.push(item*2)
+      series(items.shift())
+    }, 2000)
+  }else{
+    console.log('results:', results)
+  }
+}
+
+function logInOrder(urls){
+  //远程读取所有的urls
+  const textPromises = urls.map(url=&gt;{
+    return fetch(url).then(response=&gt;response.text())
+  })
+  //按次序输出
+  textPromises.reduce((chain, textPromise)=&gt;{
+    return chain.then(()=&gt;textPromise)
+      .then(text=&gt;console.log(text))
+  }, Promise.resolve())
+}
+
+async function logInOrder(urls){
+  for(const url of urls){
+    const response = await fetch(url)
+    console.log(await response.text())
+  }
+}
+async function logInOrder(urls){
+  //并发读取远程url
+  const textPromises = urls.map(async url=&gt;{
+    const response = await fetch(url)
+    return response.text()
+  })
+  //按次序输出
+  for(const textPromise of textPromises){
+    console.log(await textPromise)
+  }
+}
+
+
+// series(items.shift())
+
+// for(let i=0,len=items.length; i&lt;len; i++){
+//   setTimeout(()=&gt;{
+//     console.log('arg: ', items[i])
+//     results.push(items[i]*2)
+//     if(results.length === len){
+//       console.log('results:', results)
+//     }
+//   },2000) 
+// }
+
+let running = 0
+let limit = 2
+
+function launcher(){
+  while(running&lt;limit &amp;&amp; items.length&gt;0){
+    let item = items.shift()
+    setTimeout(()=&gt;{
+      results.push(item*2)
+      running--
+      launcher()
+      if(running === 0){
+        console.log('results: ', results)
+      }
+    }, 2000)
+    running++
+    console.log('arg: ', item)
+  }
+}
+// launcher()
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>let tasks = [1,2,3,4,5,6,7,8,9,10]
+let limit = 3
+const readFile = function(file){
+  return new Promise((resolve, reject)=&gt;{
+    setTimeout(()=&gt;{
+      console.log('success', file)
+      resolve(file)
+    }, 5000)
+  })
+}
+
+async function sendRequest(tasks, limit){
+  return new Promise((resolve, reject)=&gt;{
+    let counter = 0
+    let len = tasks.length
+    let start = async ()=&gt;{
+      let task = tasks.shift()
+      console.log('start: ',task)
+      if(task){
+        await readFile(task)
+        if(counter===len-1){
+          console.log('全部完成')
+          resolve()
+        }else{
+          counter++
+          start()
+        }
+      }
+    }
+    while(limit&gt;0){
+      setTimeout(()=&gt;{
+       start()
+      }, Math.random()*7000)
+      limit--
+    }
+  })
+}
+
+sendRequest(tasks,limit)
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/sunnyzlx/personal_learning_blog/edit/master/docs/es6/异步编程.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/personal_learning_blog/es6/promise.html" class="prev">
+        promise
+      </a></span> <span class="next"><a href="/personal_learning_blog/es6/array.html">
+        array
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/personal_learning_blog/assets/js/app.74e3015b.js" defer></script><script src="/personal_learning_blog/assets/js/2.6c17bd23.js" defer></script><script src="/personal_learning_blog/assets/js/44.14da4196.js" defer></script>
+  </body>
+</html>

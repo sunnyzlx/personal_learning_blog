@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>es6简介 | 个人学习博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/personal_learning_blog/logo.png">
+    <link rel="manifest" href="/personal_learning_blog/manifest.json">
+    <link rel="apple-touch-icon" href="/personal_learning_blog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/personal_learning_blog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="个人学习博客">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/personal_learning_blog/assets/css/0.styles.d89bb2b8.css" as="style"><link rel="preload" href="/personal_learning_blog/assets/js/app.74e3015b.js" as="script"><link rel="preload" href="/personal_learning_blog/assets/js/2.6c17bd23.js" as="script"><link rel="preload" href="/personal_learning_blog/assets/js/37.cba0c296.js" as="script"><link rel="prefetch" href="/personal_learning_blog/assets/js/10.f3dfdda0.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/100.6fe8a05c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/101.62fa532d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/102.2b529457.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/103.2096c698.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/104.3d417a3f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/105.dd8445dd.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/106.21732a46.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/107.190b9142.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/108.12c56ec1.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/11.15e025ca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/12.3c465d6f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/13.01fa0ab2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/14.228b20df.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/15.e051af75.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/16.b6cd45b2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/17.04b92cfa.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/18.f213c6d2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/19.731e1965.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/20.37dd4851.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/21.4539f92b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/22.ff177489.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/23.337464b7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/24.c615303b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/25.6a702dd7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/26.0c25b06b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/27.36993a49.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/28.ff6e6e2f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/29.687807da.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/3.81a0a7fb.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/30.c6db1f4d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/31.2342ba6a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/32.8198781b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/33.b238ec12.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/34.69e7f1b8.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/35.5a58ffe8.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/36.c925e579.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/38.3438e861.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/39.bdeebabe.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/4.ba3164ba.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/40.5264cfc2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/41.7a3922a5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/42.f93f3c7f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/43.9cb47d07.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/44.14da4196.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/45.d58f54ea.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/46.605c4244.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/47.f81de92d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/48.c24766f9.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/49.e0e93f9a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/5.75a3592b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/50.c37731f2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/51.5daa5256.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/52.9901f9c7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/53.7488a95a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/54.96d1df40.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/55.f40beac1.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/56.596340de.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/57.796601c5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/58.879319ae.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/59.4ca05c3d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/6.0377ba0c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/60.a7c4a633.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/61.9c4a99c3.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/62.a46d12fe.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/63.108ac59f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/64.18e7e87f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/65.ff114422.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/66.8d316103.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/67.09533e88.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/68.37810e5e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/69.71fadcfc.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/7.c5829170.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/70.76b6f674.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/71.2ba4e8cd.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/72.4f5b9f9b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/73.81464a39.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/74.66c11559.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/75.d5e0ec17.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/76.4a1d1e39.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/77.a29f54e9.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/78.2a8dd139.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/79.ab2d8390.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/8.08326ec3.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/80.a905e17b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/81.976246d0.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/82.43e2d4f4.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/83.e0dce43e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/84.fba59f59.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/85.ee892391.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/86.78db9fc4.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/87.b48f406e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/88.75767c0b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/89.86e0154c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/9.28a7790b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/90.db1e0351.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/91.c39dcc6c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/92.300d0ab2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/93.793d24d5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/94.a43aed3f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/95.7d193dca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/96.67e5317e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/97.8e7acaca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/98.79f74317.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/99.f82e0052.js">
+    <link rel="stylesheet" href="/personal_learning_blog/assets/css/0.styles.d89bb2b8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/personal_learning_blog/" class="home-link router-link-active"><!----> <span class="site-name">个人学习博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"> <a href="https://github.com/sunnyzlx/personal_learning_blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"> <a href="https://github.com/sunnyzlx/personal_learning_blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es5</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>es6</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/personal_learning_blog/es6/" aria-current="page" class="active sidebar-link">es6简介</a></li><li><a href="/personal_learning_blog/es6/let与const.html" class="sidebar-link">let与const</a></li><li><a href="/personal_learning_blog/es6/变量的解构赋值.html" class="sidebar-link">变量的解构赋值</a></li><li><a href="/personal_learning_blog/es6/promise.html" class="sidebar-link">promise</a></li><li><a href="/personal_learning_blog/es6/异步编程.html" class="sidebar-link">异步编程</a></li><li><a href="/personal_learning_blog/es6/array.html" class="sidebar-link">array</a></li><li><a href="/personal_learning_blog/es6/set与map.html" class="sidebar-link">set与map</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>react</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>wechat</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>leetcode</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>work</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>interview</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="es6简介"><a href="#es6简介" class="header-anchor">#</a> es6简介</h1> <ul><li>es6全称ECMAScript, 2015年发布，又称ECMAScript2015, ES2015, ES6</li> <li>有强大的生产力，可以大大提高效率
+<ul><li>es6实现对象拷贝，一行代码搞定，Object.assign({t:1}, {k:2})</li> <li>默认参数，开发中必不可少，为了增强代码的安全性</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>function hello(txt){
+  txt = txt || 'hello world'
+}
+function hello(txt='hello world'){}
+// es6只在函数声明时，在参数上加了默认值，代码更加简洁
+</code></pre></div><ul><li>字符串模版
+<ul><li>es6用了一个变量，一个字符串，就实现了模版和数据的编译过程，而且不依赖任何第三方库</li></ul></li> <li>常用语法
+<ul><li>解构赋值，箭头函数，Set和Map, 异步操作，类与对象，模块化</li></ul></li></ul> <p>2.多行变量/模版字符串
+模板字符串（template string）是增强版的字符串，用反引号（`）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。
+3.解构赋值</p> <ol><li>详情参看 http://es6.ruanyifeng.com/#docs/destructuring
+2.简单参考 https://blog.csdn.net/qq_36838191/article/details/80856656</li></ol> <p>4.块级作用域</p> <p>5.函数默认参数
+详情参考： http://es6.ruanyifeng.com/?search=%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F&amp;x=0&amp;y=0#docs/function
+ES6 允许为函数的参数设置默认值，即直接写在参数定义的后面。
+参数变量是默认声明的，所以不能用let或const再次声明。
+function foo(x = 5) {
+let x = 1; // error
+const x = 2; // error
+}</p> <p>6.箭头函数
+写法：
+var fn = x =&gt; x * x;</p> <p>x =&gt; {
+if (x &gt; 0) {
+return x * x;
+}
+else {
+return - x * x;
+}
+}</p> <p>// 两个参数:
+(x, y) =&gt; x * x + y * y</p> <p>// 无参数:
+() =&gt; 3.14</p> <p>// 可变参数:
+(x, y, ...rest) =&gt; {
+var i, sum = x + y;
+for (i=0; i&lt;rest.length; i++) {
+sum += rest[i];
+}
+return sum;
+}</p> <p>如果要返回一个对象，就要注意，如果是单表达式，这么写的话会报错：
+// SyntaxError:
+x =&gt; { foo: x }</p> <p>因为和函数体的{ ... }有语法冲突，所以要改为：
+// ok:
+x =&gt; ({ foo: x })</p> <p>箭头函数和匿名函数有个明显的区别：箭头函数内部的this是词法作用域，由上下文确定。
+由于this在箭头函数中已经按照词法作用域绑定了，所以，用call()或者apply()调用箭头函数时，无法对this进行绑定，即传入的第一个参数被忽略：</p> <div class="language- extra-class"><pre><code>                                                                                       原型：
+</code></pre></div><p>说一个原型的实际应用
+原型如何体现他的扩展性
+异步： 解决方法：promise</p> <p>单线程：只有一个线程，在同一时间只能做一件事，两段js不能同时执行
+原因： 避免DOM渲染的冲突
+解决方案： 异步
+避免DOM渲染的冲突原因：1.浏览器需要渲染DOM  2.js可以修改DOM 。  3.js执行的时候，浏览器渲染DOM会暂停
+4.两段js代码不能同时执行（同时修改同一段js代码就冲突了）
+5.webworker支持多线程，但是不能访问DOM
+实现异步的具体解决方案：event-loop(事件轮询)
+步骤：
+同步代码，直接执行
+异步函数会根据等待时间先放在异步队列中
+待同步函数执行完毕，轮询执行异步队列的函数
+什么是异步队列，什么时间放入异步队列 ？
+轮询的过程：在程序执行的过程中，会首先执行同步代码，同步代码放在主进程当中先执行，异步代码会放到异步队列中，当异步代码到达执行时间就会被放入异步队列中，然后会轮询将其异步代码放到主进程中，当代码执行完毕后，又会去异步队列中看有没有代码，有代码则会继续放到主进程中执行，循环往复</p> <div class="language- extra-class"><pre><code>promise的基本使用和原理
+</code></pre></div><p>Promise</p> <ol><li>异常捕获：规定：then只接收一个参数，即成功的回调，在catch中统一捕获异常
+2.Promise.all():  Promice.all接受一个promise对象的数组，待全部执行完成之后统一执行success
+Promise.all([reault1, result2]).then(datas =&gt; {
+//接收到的datas是一个数组，依次包含了多个promise返回的内容
+console.log(datas[0])
+console.log(datas[1])
+})</li></ol> <p>Promise.race(): Promise.race()接收一个包含多个promise对象的数组，只要有一个完成就执行success
+Promise.race([reault1, result2]).then(data =&gt; {
+//data即最先执行完成的promise的返回值
+console.log(data)
+})</p> <p>3.promise标准--状态变化  then函数
+Promise对象有以下两个特点。
+对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是Promise这个名字的由来，它的英语意思就是“承诺”，表示其他手段无法改变。
+一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise对象的状态改变，只有两种可能：从pending变为fulfilled和从pending变为rejected。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果，这时就称为 resolved（已定型）。如果改变已经发生了，你再对Promise对象添加回调函数，也会立即得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。
+Promise也有一些缺点：
+首先，无法取消Promise，一旦新建它就会立即执行，无法中途取消。其次，如果不设置回调函数，Promise内部抛出的错误，不会反应到外部。第三，当处于pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。
+then方法返回的是一个新的Promise实例（注意，不是原来那个Promise实例）
+4.async/await
+then只是将callback拆分了，但还是异步的写法
+async/await是最直接的同步写法
+用法：
+使用await   函数必须用await标识
+await后面跟的是promise实例
+使用babel-polyfill（兼容，因为现在es7还未出来）
+特点：
+基本语法：同用法
+使用了promise，但是和promise不冲突
+完全是同步的写法，没有回调函数
+但是： 改变不了js单线程，异步的本质
+vdom
+目前未使用vdom遇到的问题：
+dom操作是昂贵的，js运行效率高
+尽量减少dom操作，而不是‘推倒重来’
+项目越复杂，影响越严重
+vdom相关问题：
+vdom是什么，为什么会存在vdom
+vdom是什么
+virtual dom ，虚拟dom<br>
+用js模拟dom结构
+dom变化的对比，放在js层来做
+提高重绘性能</p> <div class="language- extra-class"><pre><code>     为什么会存在vdom
+ dom操作非常昂贵
+ 将dom对比变化的操作放在js层来做，提高效率
+</code></pre></div><p>vdom如何应用，核心API是什么
+应用：snabbdom用法
+核心API:  h函数的两种写法：h('&lt;标签名&gt;'，{...属性...}, [...子元素...])   h('&lt;标签名&gt;'，{...属性...}, ‘...’)<br>
+patch函数：
+patch（container，vnode） -----首次渲染
+patch（vnode，newVnode） -----再次渲染（将两者对比，把不同的地方换成后者）
+介绍一下diff算法</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/sunnyzlx/personal_learning_blog/edit/master/docs/es6/index.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/personal_learning_blog/es5/字符串类高频面试题.html" class="prev">
+        字符串类高频面试题
+      </a></span> <span class="next"><a href="/personal_learning_blog/es6/let与const.html">
+        let与const
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/personal_learning_blog/assets/js/app.74e3015b.js" defer></script><script src="/personal_learning_blog/assets/js/2.6c17bd23.js" defer></script><script src="/personal_learning_blog/assets/js/37.cba0c296.js" defer></script>
+  </body>
+</html>

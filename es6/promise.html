@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>promise | 个人学习博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/personal_learning_blog/logo.png">
+    <link rel="manifest" href="/personal_learning_blog/manifest.json">
+    <link rel="apple-touch-icon" href="/personal_learning_blog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/personal_learning_blog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="个人学习博客">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/personal_learning_blog/assets/css/0.styles.d89bb2b8.css" as="style"><link rel="preload" href="/personal_learning_blog/assets/js/app.74e3015b.js" as="script"><link rel="preload" href="/personal_learning_blog/assets/js/2.6c17bd23.js" as="script"><link rel="preload" href="/personal_learning_blog/assets/js/40.5264cfc2.js" as="script"><link rel="prefetch" href="/personal_learning_blog/assets/js/10.f3dfdda0.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/100.6fe8a05c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/101.62fa532d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/102.2b529457.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/103.2096c698.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/104.3d417a3f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/105.dd8445dd.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/106.21732a46.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/107.190b9142.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/108.12c56ec1.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/11.15e025ca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/12.3c465d6f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/13.01fa0ab2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/14.228b20df.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/15.e051af75.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/16.b6cd45b2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/17.04b92cfa.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/18.f213c6d2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/19.731e1965.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/20.37dd4851.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/21.4539f92b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/22.ff177489.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/23.337464b7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/24.c615303b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/25.6a702dd7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/26.0c25b06b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/27.36993a49.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/28.ff6e6e2f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/29.687807da.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/3.81a0a7fb.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/30.c6db1f4d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/31.2342ba6a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/32.8198781b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/33.b238ec12.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/34.69e7f1b8.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/35.5a58ffe8.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/36.c925e579.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/37.cba0c296.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/38.3438e861.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/39.bdeebabe.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/4.ba3164ba.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/41.7a3922a5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/42.f93f3c7f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/43.9cb47d07.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/44.14da4196.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/45.d58f54ea.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/46.605c4244.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/47.f81de92d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/48.c24766f9.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/49.e0e93f9a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/5.75a3592b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/50.c37731f2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/51.5daa5256.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/52.9901f9c7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/53.7488a95a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/54.96d1df40.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/55.f40beac1.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/56.596340de.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/57.796601c5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/58.879319ae.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/59.4ca05c3d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/6.0377ba0c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/60.a7c4a633.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/61.9c4a99c3.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/62.a46d12fe.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/63.108ac59f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/64.18e7e87f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/65.ff114422.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/66.8d316103.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/67.09533e88.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/68.37810e5e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/69.71fadcfc.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/7.c5829170.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/70.76b6f674.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/71.2ba4e8cd.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/72.4f5b9f9b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/73.81464a39.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/74.66c11559.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/75.d5e0ec17.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/76.4a1d1e39.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/77.a29f54e9.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/78.2a8dd139.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/79.ab2d8390.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/8.08326ec3.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/80.a905e17b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/81.976246d0.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/82.43e2d4f4.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/83.e0dce43e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/84.fba59f59.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/85.ee892391.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/86.78db9fc4.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/87.b48f406e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/88.75767c0b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/89.86e0154c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/9.28a7790b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/90.db1e0351.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/91.c39dcc6c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/92.300d0ab2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/93.793d24d5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/94.a43aed3f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/95.7d193dca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/96.67e5317e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/97.8e7acaca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/98.79f74317.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/99.f82e0052.js">
+    <link rel="stylesheet" href="/personal_learning_blog/assets/css/0.styles.d89bb2b8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/personal_learning_blog/" class="home-link router-link-active"><!----> <span class="site-name">个人学习博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"> <a href="https://github.com/sunnyzlx/personal_learning_blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"> <a href="https://github.com/sunnyzlx/personal_learning_blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es5</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>es6</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/personal_learning_blog/es6/" aria-current="page" class="sidebar-link">es6简介</a></li><li><a href="/personal_learning_blog/es6/let与const.html" class="sidebar-link">let与const</a></li><li><a href="/personal_learning_blog/es6/变量的解构赋值.html" class="sidebar-link">变量的解构赋值</a></li><li><a href="/personal_learning_blog/es6/promise.html" aria-current="page" class="active sidebar-link">promise</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/personal_learning_blog/es6/promise.html#概述" class="sidebar-link">概述</a></li><li class="sidebar-sub-header"><a href="/personal_learning_blog/es6/promise.html#_2个特点" class="sidebar-link">2个特点</a></li><li class="sidebar-sub-header"><a href="/personal_learning_blog/es6/promise.html#_3种状态" class="sidebar-link">3种状态</a></li><li class="sidebar-sub-header"><a href="/personal_learning_blog/es6/promise.html#优点" class="sidebar-link">优点</a></li><li class="sidebar-sub-header"><a href="/personal_learning_blog/es6/promise.html#缺点" class="sidebar-link">缺点</a></li><li class="sidebar-sub-header"><a href="/personal_learning_blog/es6/promise.html#应用" class="sidebar-link">应用</a></li></ul></li><li><a href="/personal_learning_blog/es6/异步编程.html" class="sidebar-link">异步编程</a></li><li><a href="/personal_learning_blog/es6/array.html" class="sidebar-link">array</a></li><li><a href="/personal_learning_blog/es6/set与map.html" class="sidebar-link">set与map</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>react</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>wechat</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>leetcode</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>work</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>interview</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="promise"><a href="#promise" class="header-anchor">#</a> promise</h1> <ul><li>https://juejin.im/post/6844903632203153415</li> <li>https://juejin.im/post/6844904023988895757</li> <li>https://juejin.im/post/6844903591518404622</li> <li>https://juejin.im/post/6844903763178684430#heading-9</li></ul> <h2 id="概述"><a href="#概述" class="header-anchor">#</a> 概述</h2> <ul><li>Promise 是异步编程的一种解决方案，其实是一个构造函数，自己身上有all、race、reject、resolve这几个方法，原型上有then、catch、finally等方法</li> <li>Promise 是一个对象，从它可以获取异步操作的结果。这个对象有2个特点，3种状态；</li></ul> <h2 id="_2个特点"><a href="#_2个特点" class="header-anchor">#</a> 2个特点</h2> <ul><li>对象的状态不受外界影响，只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。</li> <li>一旦状态改变，就不会再变，任何时候都可以得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。</li></ul> <h2 id="_3种状态"><a href="#_3种状态" class="header-anchor">#</a> 3种状态</h2> <ul><li>pending（进行中）、fulfilled（已成功）和rejected（已失败）</li></ul> <h2 id="优点"><a href="#优点" class="header-anchor">#</a> 优点</h2> <ul><li>有了Promise对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数</li></ul> <h2 id="缺点"><a href="#缺点" class="header-anchor">#</a> 缺点</h2> <ul><li>无法取消Promise，一旦新建它就会立即执行，无法中途取消</li> <li>如果不设置回调函数，Promise内部抛出的错误，不会反应到外部</li> <li>当处于pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）</li></ul> <h2 id="应用"><a href="#应用" class="header-anchor">#</a> 应用</h2> <h3 id="_1-手写promise"><a href="#_1-手写promise" class="header-anchor">#</a> 1.手写promise</h3> <ul><li>https://zhuanlan.zhihu.com/p/21834559</li> <li>简版<div class="language- extra-class"><pre class="language-text"><code>// 手写promise
+class Promise1{
+  constructor(fn){
+    // 初始化state为等待态
+    this.state = 'pending'
+    // 初始化成功的参数
+    this.value = undefined
+    // 初始化失败的参数
+    this.reason = undefined
+    // resolve调用，state变为成功态，并将要传递的参数，挂到this.value上，方便回调onFulfilled调用
+    let resolve = (value) =&gt; {
+      if(this.state === 'pending'){
+        this.state = 'resolved'
+        this.value = value
+      }
+    }
+    // reject调用，state变为失败态，并将要传递的参数，挂到this.reason上，方便回调onRejected调用
+    let reject = (reason) =&gt; {
+      if(this.state === 'pending'){
+        this.state = 'rejected'
+        this.reason = reason
+      }
+    }
+    // 自动执行函数
+    try{
+      fn(resolve, reject)
+    }catch(err){
+      reject(err)
+    }
+  }
+
+  then(onFulfilled, onRejected){
+    if(this.state === 'resolved'){
+      onFulfilled(this.value)
+    }
+    if(this.state === 'rejected'){
+      onRejected(this.reason)
+    }
+  }
+}
+
+
+new Promise1(function(resolve, reject){
+  resolve(2)
+  console.log(0)
+}).then(console.log)
+// 0 2
+</code></pre></div></li> <li>复杂版</li></ul> <div class="language- extra-class"><pre class="language-text"><code>  class Promise {
+  constructor(executor){
+    this.state = 'pending'
+    this.value = undefined
+    this.reason = undefined
+    this.onResolvedCallbacks = []
+    this.onRejectedCallbacks = []
+    let resolve = value =&gt; {
+      if(this.state === 'pending'){
+        this.state = 'fulfilled'
+        this.value = value
+        this.onResolvedCallbacks.forEach(fn =&gt; fn())
+      }
+    }
+    let reject = value =&gt; {
+      if(this.state === 'pending'){
+        this.state = 'rejected'
+        this.reason = value
+        this.onRejectedCallbacks.forEach(fn =&gt; fn())
+      }
+    }
+    try {
+      executor(resolve,reject)
+    }catch(err){
+      reject(err)
+    }
+  }
+  then(onFulfilled, onRejected){
+    onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : value =&gt; value
+    onRejected = typeof onRejected === 'function' ? onRejected : reason =&gt;{ throw reason }
+    let promise2 = new Promise((resolve, reject)=&gt;{
+      if(this.state === 'fulfilled'){
+        setTimeout(() =&gt; {
+          try {
+            let x = onFulfilled(this.value)
+            resolvePromise(promise2,x,resolve,reject)
+          }catch(err){
+            reject(err)
+          }
+        },0)
+      }
+      if(this.state === 'rejected'){
+        setTimeout(() =&gt; {
+          try {
+            let x = onRejected(this.reason)
+            resolvePromise(promise2,x,resolve,reject)
+          }catch(err){
+            reject(err)
+          }
+        },0)
+      }
+      if(this.state === 'pending'){
+        this.onFulfilledCallbacks.push(()=&gt;{
+          setTimeout(() =&gt; {
+            try {
+              let x = onFulfilled(this.value)
+              resolvePromise(promise2,x,resolve,reject)
+            }catch(err){
+              reject(err)
+            }
+          },0)
+        })
+        this.onRejectedCallbacks.push(()=&gt;{
+          setTimeout(() =&gt; {
+            try {
+              let x = onRejected(this.reason)
+              resolvePromise(promise2,x,resolve,reject)
+            }catch(err){
+              reject(err)
+            }
+          },0)
+        })
+        
+      }
+    })
+    return promise2;
+  }
+  catch(fn){
+    return this.then(null, fn)
+  }
+}
+// 实现。then的链式调用
+function resolvePromise(promise2,x,resolve,reject){
+  if(x === promise2){
+    return reject(new TypeError('Chaining cycle detected for promise'))
+  }
+  let called;
+  if(x!==null &amp;&amp; (typeof x === 'object' || typeof x === 'function')){
+    try {
+      let then = x.then
+      if(typeof then === 'function'){
+        then.call(x, y =&gt; {
+          if(called) return
+          called = true
+          resolvePromise(promise2, y, resolve, reject)
+        }, err =&gt; {
+          if(called) return
+          called = true
+          reject(err)
+        })
+      }else{
+        resolve(x)
+      }
+    }catch(e){
+      if(called) return
+      called = true
+      reject(e)
+    }
+  }else{
+    resolve(x)
+  }
+}
+
+//resolve方法
+Promise.resolve = function(val){
+  return new Promise((resolve,reject) =&gt; {
+    resolve(val)
+  })
+}
+//reject方法
+Promise.reject = function(val){
+  return new Promise((resolve,reject) =&gt; {
+    reject(val)
+  })
+}
+//race方法
+Promise.race = function(promises){
+  return new Promise((resolve, reject)=&gt;{
+    promises.forEach(promise =&gt; {
+      promise.then(resolve,reject)
+    })
+  })
+}
+// all方法
+Promise.all = function(promises){
+  let arr = [], index=0;
+  let len = promises.length
+  return new Promise((resolve,reject) =&gt; {
+    for(let i=0; i&lt;len; i++){
+      promises[i].then(data =&gt; {
+        index++
+        arr[i] = data;
+        if(index === len){
+          return resolve(arr)
+        }
+      }, reject)
+    }
+  })
+}
+</code></pre></div><h3 id="_2-实现一个延时函数"><a href="#_2-实现一个延时函数" class="header-anchor">#</a> 2.实现一个延时函数</h3> <div class="language- extra-class"><pre class="language-text"><code>function sleep(time){
+  return new Promise(function(resolve,reject){
+    setTimeout(() =&gt; {
+      resolve(true)
+    }, time*1000)
+  })
+}
+</code></pre></div><h3 id="_3-实现一个retry函数"><a href="#_3-实现一个retry函数" class="header-anchor">#</a> 3.实现一个retry函数</h3> <ul><li>promise.retry 的作用是执行一个函数，如果不成功最多可以尝试 times 次。传参需要三个变量，所要执行的函数，尝试的次数以及延迟的时间。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>function retry(fn, times, delay){
+  return new Promise((resolve, reject)=&gt;{
+    let errors = []
+    function attempt(){
+      if(times===0){
+        reject(errors)
+      }else{
+        fn().then(v=&gt;resolve(v))
+          .catch(e=&gt;{
+            errors.push(e)
+            times--;
+            setTimeout(() =&gt; attempt(),delay)
+          })
+      }
+    }
+    attempt()
+  })
+}
+</code></pre></div><h3 id="_4-将node的回调中同步的callback包装为promise形式"><a href="#_4-将node的回调中同步的callback包装为promise形式" class="header-anchor">#</a> 4.将node的回调中同步的callback包装为promise形式</h3> <div class="language- extra-class"><pre class="language-text"><code>nodeGet(param, function (err, data) { })
+  // 转化成promise形式
+  function nodeGetAysnc(param) {
+    return new Promise((resolve, reject) =&gt; {
+      nodeGet(param, function (err, data) {
+        if (err !== null) return reject(err)
+        resolve(data)
+      })
+  })}
+// 按照上面的思路，即可写出通用版的形式。
+function promisify(fn,context){
+  return (...args) =&gt; {
+    return new Promise((resolve,reject) =&gt; {
+        fn.apply(context,[...args,(err,res) =&gt; {
+            return err ? reject(err) : resolve(res)
+        }])
+    })
+  }
+}
+
+function promisify(fn, ctx){
+  return (...args) =&gt; {
+    return new Promise(function(resolve,reject){
+      fn.apply(ctx, [...args, (err,res) =&gt; {
+        return err ? reject(err) : resolve(res)
+      }])
+    })
+  }
+}
+</code></pre></div><h3 id="_5-异步加载图片"><a href="#_5-异步加载图片" class="header-anchor">#</a> 5.异步加载图片</h3> <div class="language- extra-class"><pre class="language-text"><code>function loadImageAsync(url){
+  return new Promise(function(resolve,reject){
+    const image = new Image()
+    image.onload = function(){
+      resolve(image)
+    }
+    image.onerror = function(){
+      reject(new Error('could not load image at'+url))
+    }
+    image.src = url
+  })
+}
+</code></pre></div><h3 id="_6-用promise对象实现的-ajax-操作"><a href="#_6-用promise对象实现的-ajax-操作" class="header-anchor">#</a> 6.用Promise对象实现的 Ajax 操作</h3> <div class="language- extra-class"><pre class="language-text"><code>const getJSON = function(url){
+  return new Promise(function(resolve,reject){
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url)
+    xhr.setRequestHeader('Accept','application/json')
+    xhr.responseType = 'json';
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState !== 4){
+        return;
+      }
+      if(xhr.status === 200){
+        resolve(xhr.responseText)
+      }else{
+        reject(new Error(this.statusText))
+      }
+    }
+    xhr.send()
+  })
+}
+
+getJSON('./posts.json').then()
+</code></pre></div><h3 id="_7-promise异步流程控制"><a href="#_7-promise异步流程控制" class="header-anchor">#</a> 7.promise异步流程控制</h3> <ul><li>https://juejin.im/post/59cdb6526fb9a00a4e67c7fb#heading-8</li></ul> <div class="language- extra-class"><pre class="language-text"><code>function loadImg(url){
+  return new Promise(function(resolve,reject){
+    const img = new Image()
+    img.onload = function(){
+      resolve(img)
+    }
+    img.onerror = reject
+    img.src = url
+  })
+}
+
+let promise = Promise.resolve()
+for(let i=0,len=urls.length; i&lt;len;i++){
+  promise = promise.then(()=&gt; loadImg(urls[i]))
+                   .then(()=&gt; addToHtml)
+}
+
+urls.reduce((promise,url) =&gt;{
+  return promise.then(() =&gt; loadImg(url))
+                .then(()=&gt; addToHtml)
+}, Promise.resolve()).then(() =&gt; {
+  document.querySelector('.loading').style.display = 'none'
+})
+
+
+function syncLoad(index){
+  if(index&gt;=urls.length) return Promise.resolve()
+  loadImg(urls[index])
+    .then(img =&gt; {
+      addToHtml(img)
+      return syncLoad(index+1)
+    })
+}
+syncLoad(0)
+  .then(()=&gt;{
+    document.querySelector('.loading').style.display = 'none'
+})
+
+function syncLoad(fn, arr, handler){
+  const errors = []
+  return arr.reduce((promise, url)=&gt;{
+    return promise.then(() =&gt; fn(url))
+                  .then((img)=&gt; handler(img))
+                  .catch((err)=&gt;{
+                    console.log(err)
+                    errors.push(url)
+                  })
+
+  }, Promise.resolve()).then(() =&gt; {
+    document.querySelector('.loading').style.display = 'none'
+  }).catch(console.log)
+}
+
+
+syncLoad(imgLoad, urls, addToHtml)
+  .then(()=&gt;{
+    document.querySelector('.loading').style.display = 'none'
+  })
+  .catch(console.log)
+
+const promises = urls.map(loadImg)
+Promise.all(promises)
+  .then(imgs =&gt;{
+    imgs.forEach(addToHtml)
+    document.querySelector('.loading').style.display = 'none'
+  })
+  .catch(err =&gt; {
+    console.log(err)
+  })
+
+
+const promises = urls.map(loadImg)
+promises.reduce((task, imgPromise)=&gt;{
+  task.then(() =&gt; imgPromise).then(()=&gt;addToHtml)
+}, Promise.resolve())
+</code></pre></div><h3 id="_8-控制最大并发数"><a href="#_8-控制最大并发数" class="header-anchor">#</a> 8.控制最大并发数</h3> <ul><li>微信小程序最一开始对并发数限制为5个，后来升级到10个，如果超过10个会被舍弃。后来微信小程序升级为不限制并发请求，但超过10个会排队机制。也就是当同时调用的请求超过 10 个时，小程序会先发起 10 个并发请求，超过 10 个的部分按调用顺序进行排队，当前一个请求完成时，再发送队列中的下一个请求。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>function limitLoad(urls, handler, limit){
+  const newUrls = [].concat(urls)
+  let count = 0
+  const promises = []
+  function load(){
+    if(newUrls.length&lt;=0 || count &gt;limit) return
+    count+=1
+    return handler(newUrls.shift())
+      .catch(err=&gt;{
+        console.log(err)
+      })
+      .then(() =&gt; {
+        count-=1
+      })
+      .then(() =&gt;{
+        load()
+      })
+  }
+  for(let i=0,len=newUrls.length; i&lt;limit &amp;&amp; i&lt;len;i++){
+    promises.push(load())
+  }
+  return Promise.all(promises)
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>function concurrentPoll(){
+    this.tasks = [];
+    this.max = 10;
+    setTimeout(() =&gt; {
+        this.run()
+    },0)
+}
+
+concurrentPoll.prototype.addTask = function(task){
+    this.tasks.push(task)
+}
+
+concurrentPoll.prototype.run = function(){
+    if(this.tasks.length == 0){
+        return
+    }
+    var min = Math.min(this.tasks.length, max);
+    for(var i = 0; i &lt; min; i++){
+        this.max--;
+        var task = this.tasks.shift();
+        task().then((res) =&gt; {
+            console.log(res)
+        }).catch((err) =&gt; {
+            console.log(err)
+        }).finally(() =&gt; {
+            this.max++;
+            this.run();
+        })
+    }
+}
+</code></pre></div><h3 id=""><a href="#" class="header-anchor">#</a></h3> <ul><li>前端很常见是下面一个场景，我们需要实现一个用户修改头像的功能。首先我们需要将一张图片压缩并提交给后端，后端返回该图片保存的 url，前端拿保存的 url 和用户 id 提交给服务器来修改用户头像。
+<ul><li>异步一：加载图片</li> <li>异步二：压缩图片</li> <li>异步三：上传图片</li> <li>异步四：提交保存</li></ul></li> <li>大概代码实现</li></ul> <div class="language- extra-class"><pre class="language-text"><code>Promise.all([func1(), func2(), func3()])
+  .then(([result1, result2, result3])=&gt;{})
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/sunnyzlx/personal_learning_blog/edit/master/docs/es6/promise.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/personal_learning_blog/es6/变量的解构赋值.html" class="prev">
+        变量的解构赋值
+      </a></span> <span class="next"><a href="/personal_learning_blog/es6/异步编程.html">
+        异步编程
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/personal_learning_blog/assets/js/app.74e3015b.js" defer></script><script src="/personal_learning_blog/assets/js/2.6c17bd23.js" defer></script><script src="/personal_learning_blog/assets/js/40.5264cfc2.js" defer></script>
+  </body>
+</html>

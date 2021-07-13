@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>链表 | 个人学习博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/personal_learning_blog/logo.png">
+    <link rel="manifest" href="/personal_learning_blog/manifest.json">
+    <link rel="apple-touch-icon" href="/personal_learning_blog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/personal_learning_blog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="个人学习博客">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/personal_learning_blog/assets/css/0.styles.d89bb2b8.css" as="style"><link rel="preload" href="/personal_learning_blog/assets/js/app.74e3015b.js" as="script"><link rel="preload" href="/personal_learning_blog/assets/js/2.6c17bd23.js" as="script"><link rel="preload" href="/personal_learning_blog/assets/js/58.879319ae.js" as="script"><link rel="prefetch" href="/personal_learning_blog/assets/js/10.f3dfdda0.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/100.6fe8a05c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/101.62fa532d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/102.2b529457.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/103.2096c698.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/104.3d417a3f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/105.dd8445dd.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/106.21732a46.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/107.190b9142.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/108.12c56ec1.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/11.15e025ca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/12.3c465d6f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/13.01fa0ab2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/14.228b20df.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/15.e051af75.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/16.b6cd45b2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/17.04b92cfa.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/18.f213c6d2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/19.731e1965.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/20.37dd4851.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/21.4539f92b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/22.ff177489.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/23.337464b7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/24.c615303b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/25.6a702dd7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/26.0c25b06b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/27.36993a49.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/28.ff6e6e2f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/29.687807da.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/3.81a0a7fb.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/30.c6db1f4d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/31.2342ba6a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/32.8198781b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/33.b238ec12.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/34.69e7f1b8.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/35.5a58ffe8.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/36.c925e579.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/37.cba0c296.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/38.3438e861.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/39.bdeebabe.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/4.ba3164ba.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/40.5264cfc2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/41.7a3922a5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/42.f93f3c7f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/43.9cb47d07.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/44.14da4196.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/45.d58f54ea.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/46.605c4244.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/47.f81de92d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/48.c24766f9.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/49.e0e93f9a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/5.75a3592b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/50.c37731f2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/51.5daa5256.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/52.9901f9c7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/53.7488a95a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/54.96d1df40.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/55.f40beac1.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/56.596340de.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/57.796601c5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/59.4ca05c3d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/6.0377ba0c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/60.a7c4a633.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/61.9c4a99c3.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/62.a46d12fe.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/63.108ac59f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/64.18e7e87f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/65.ff114422.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/66.8d316103.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/67.09533e88.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/68.37810e5e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/69.71fadcfc.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/7.c5829170.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/70.76b6f674.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/71.2ba4e8cd.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/72.4f5b9f9b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/73.81464a39.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/74.66c11559.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/75.d5e0ec17.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/76.4a1d1e39.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/77.a29f54e9.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/78.2a8dd139.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/79.ab2d8390.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/8.08326ec3.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/80.a905e17b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/81.976246d0.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/82.43e2d4f4.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/83.e0dce43e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/84.fba59f59.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/85.ee892391.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/86.78db9fc4.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/87.b48f406e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/88.75767c0b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/89.86e0154c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/9.28a7790b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/90.db1e0351.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/91.c39dcc6c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/92.300d0ab2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/93.793d24d5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/94.a43aed3f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/95.7d193dca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/96.67e5317e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/97.8e7acaca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/98.79f74317.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/99.f82e0052.js">
+    <link rel="stylesheet" href="/personal_learning_blog/assets/css/0.styles.d89bb2b8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/personal_learning_blog/" class="home-link router-link-active"><!----> <span class="site-name">个人学习博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"> <a href="https://github.com/sunnyzlx/personal_learning_blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"> <a href="https://github.com/sunnyzlx/personal_learning_blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es5</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>react</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>wechat</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>leetcode</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/personal_learning_blog/leetcode/" aria-current="page" class="sidebar-link">js算法思想学习</a></li><li><a href="/personal_learning_blog/leetcode/js排序算法.html" class="sidebar-link">JS排序算法</a></li><li><a href="/personal_learning_blog/leetcode/js算法例题.html" class="sidebar-link">js算法例题</a></li><li><a href="/personal_learning_blog/leetcode/链表.html" class="active sidebar-link">链表</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/personal_learning_blog/leetcode/链表.html#排序链表" class="sidebar-link">排序链表</a></li><li class="sidebar-sub-header"><a href="/personal_learning_blog/leetcode/链表.html#环形链表-141" class="sidebar-link">环形链表(141)</a></li><li class="sidebar-sub-header"><a href="/personal_learning_blog/leetcode/链表.html#链表入环点-142" class="sidebar-link">链表入环点（142）</a></li><li class="sidebar-sub-header"><a href="/personal_learning_blog/leetcode/链表.html#链表-2" class="sidebar-link">链表</a></li></ul></li><li><a href="/personal_learning_blog/leetcode/矩阵.html" class="sidebar-link">矩阵</a></li><li><a href="/personal_learning_blog/leetcode/动态规划.html" class="sidebar-link">动态规划</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>work</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>interview</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="链表"><a href="#链表" class="header-anchor">#</a> 链表</h1> <h2 id="排序链表"><a href="#排序链表" class="header-anchor">#</a> 排序链表</h2> <div class="language- extra-class"><pre class="language-text"><code>// 用js写一个链表的数据结构
+// 声明链表的节点
+class Node {
+  constructor(value){
+    this.val = value;
+    this.next = undefined;
+  }
+}
+// 声明链表的数据结构
+class NodeList {
+  constructor(arr){
+    // 声明链表的头部节点
+    let head = new Node(arr.shift())
+    let next = head;
+    arr.forEach(item =&gt; {
+      next.next = new Node(item);
+      next = next.next
+    })
+    return head;
+  }
+}
+// 利用快速排序给链表元素排序
+// 声明一个交换两个链表节点值的方法
+let swap = (p, q) =&gt; {
+  let val = p.val;
+  p.val = q.val;
+  q.val = val;
+}
+// 寻找基准元素的节点
+let partion = (begin, end) =&gt;{
+  let val = begin.val;
+  let p = begin;
+  let q = begin.next;
+  while(q!==end){
+    if(q.val &lt; val){
+      p = p.next;
+      swap(p, q);
+    }
+    q=q.next;
+  }
+  // 让基准元素跑到中间去
+  swap(p, begin)
+  return p;
+}
+
+// 快排序
+export default function sort(begin, end){
+  if(begin!==end){
+    let part = partion(begin, end)
+    sort(begin, part)
+    sort(part, end)
+  }
+}
+export {
+  Node,
+  NodeList
+}
+</code></pre></div><h3 id="删除链表节点-203"><a href="#删除链表节点-203" class="header-anchor">#</a> 删除链表节点(203)</h3> <div class="language- extra-class"><pre class="language-text"><code>var removeElements = function(head, val) {
+  let ele = {
+    next: head
+  }
+  let cur = ele
+  while(cur.next){
+    if(cur.next.val===val){
+      cur.next = cur.next.next
+    }else{
+      cur = cur.next
+    }
+  }
+  return ele.next
+};
+</code></pre></div><h3 id="反转链表-206"><a href="#反转链表-206" class="header-anchor">#</a> 反转链表（206）</h3> <ul><li>https://leetcode-cn.com/problems/reverse-linked-list/solution/206-fan-zhuan-lian-biao-by-alexer-660/</li> <li>迭代法</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var reverseList = function(head) {
+  let [prev, cur] = [null, head]
+  while(cur){
+    let tmp = cur.next
+    cur.next = prev
+    prev = cur
+    cur = tmp
+  }
+  return prev
+};
+</code></pre></div><ul><li>尾递归法</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var reverseList = function(head) {
+  return reverse(null, head)
+};
+function reverse(prev, cur){
+  if(!cur) return prev
+  let tmp = cur.next
+  cur.next = prev
+  return reverse(cur, tmp)
+}
+</code></pre></div><ul><li>递归</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var reverseList = function(head) {
+  if(!head||!head.next) return head
+  let next = head.next
+  let reverseHead = reverseList(next)
+  head.next = null
+  next.next = head
+  return reverseHead
+};
+
+
+var reverseList = function(head) {
+    // 如果测试用例只有一个节点 或者 递归到了尾节点，返回当前节点 
+    if(!head || !head.next) return head;
+    // 存储当前节点的下一个节点
+    let next = head.next;
+    let reverseHead = reverseList(next);
+    // 断开 head ，如图闪电⚡️标记处
+    head.next = null;
+    // 反转，后一个节点连接当前节点
+    next.next = head;
+    return reverseHead;
+};
+</code></pre></div><h2 id="环形链表-141"><a href="#环形链表-141" class="header-anchor">#</a> 环形链表(141)</h2> <ul><li>哈希表</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var hasCycle = function(head) {
+  let map = new Map()
+  while(head!==null){
+    if(map.has(head)){
+      return true
+    }
+    map.set(head, true)
+    head = head.next
+  }
+  return false
+};
+</code></pre></div><ul><li>快慢指针</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var hasCycle = function(head) {
+  let slow = head
+  let fast = head
+  while(fast &amp;&amp; fast.next){
+    slow = slow.next
+    fast = fast.next.next
+    if(slow === fast){
+      return true
+    }
+  }
+  return false
+};
+</code></pre></div><h2 id="链表入环点-142"><a href="#链表入环点-142" class="header-anchor">#</a> 链表入环点（142）</h2> <div class="language- extra-class"><pre class="language-text"><code>var detectCycle = function (head) {
+  let slowP = head, fastP = head // 都从头节点出发
+  while (fastP) {                // head就是null了，没有入环点，直接返回null
+    if (fastP.next == null) return null // fastP.next为null也说明无环
+    slowP = slowP.next           // 慢指针走一步
+    fastP = fastP.next.next      // 快指针走两步
+    if (slowP == fastP) {        // 首次相遇
+      fastP = head               // 让快指针回到头节点
+      while (true) {             // 开启循环，让快慢指针相遇
+        if (slowP == fastP) {    // 相遇，地点发生在入环处
+          return slowP           // 返回出指针的位置
+        }
+        fastP = fastP.next       // 快慢指针都走一步
+        slowP = slowP.next
+      }
+    }
+  }
+  return null
+};
+</code></pre></div><h2 id="链表-2"><a href="#链表-2" class="header-anchor">#</a> 链表</h2> <div class="language- extra-class"><pre class="language-text"><code>class Node{
+  constructor(element){
+    this.ele = element;
+    this.next = null
+  }
+}
+class LinkNodeList{
+  constructor(){
+    this.head = null;
+    this.length = 0;
+  }
+  append(ele){
+    let node = new Node(ele)
+    let cur
+    if(this.head==null){
+      this.head = node
+    }else{
+      cur = this.head
+      while(cur.next){
+        cur = cur.next
+      }
+      cur.next = node
+    }
+    this.length++
+  }
+  toString(){
+    let cur = this.head
+    let ret = [];
+    while(cur){
+      ret.push(cur.ele)
+      cur = cur.next
+    }
+    return ret.join('==&gt;')
+  }
+}
+</code></pre></div><p>//链表反转反复看</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/sunnyzlx/personal_learning_blog/edit/master/docs/leetcode/链表.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/personal_learning_blog/leetcode/js算法例题.html" class="prev">
+        js算法例题
+      </a></span> <span class="next"><a href="/personal_learning_blog/leetcode/矩阵.html">
+        矩阵
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/personal_learning_blog/assets/js/app.74e3015b.js" defer></script><script src="/personal_learning_blog/assets/js/2.6c17bd23.js" defer></script><script src="/personal_learning_blog/assets/js/58.879319ae.js" defer></script>
+  </body>
+</html>

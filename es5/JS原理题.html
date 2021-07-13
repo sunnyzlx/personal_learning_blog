@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS原理题 | 个人学习博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/personal_learning_blog/logo.png">
+    <link rel="manifest" href="/personal_learning_blog/manifest.json">
+    <link rel="apple-touch-icon" href="/personal_learning_blog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/personal_learning_blog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="个人学习博客">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/personal_learning_blog/assets/css/0.styles.d89bb2b8.css" as="style"><link rel="preload" href="/personal_learning_blog/assets/js/app.74e3015b.js" as="script"><link rel="preload" href="/personal_learning_blog/assets/js/2.6c17bd23.js" as="script"><link rel="preload" href="/personal_learning_blog/assets/js/10.f3dfdda0.js" as="script"><link rel="prefetch" href="/personal_learning_blog/assets/js/100.6fe8a05c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/101.62fa532d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/102.2b529457.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/103.2096c698.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/104.3d417a3f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/105.dd8445dd.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/106.21732a46.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/107.190b9142.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/108.12c56ec1.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/11.15e025ca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/12.3c465d6f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/13.01fa0ab2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/14.228b20df.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/15.e051af75.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/16.b6cd45b2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/17.04b92cfa.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/18.f213c6d2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/19.731e1965.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/20.37dd4851.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/21.4539f92b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/22.ff177489.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/23.337464b7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/24.c615303b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/25.6a702dd7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/26.0c25b06b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/27.36993a49.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/28.ff6e6e2f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/29.687807da.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/3.81a0a7fb.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/30.c6db1f4d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/31.2342ba6a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/32.8198781b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/33.b238ec12.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/34.69e7f1b8.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/35.5a58ffe8.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/36.c925e579.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/37.cba0c296.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/38.3438e861.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/39.bdeebabe.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/4.ba3164ba.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/40.5264cfc2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/41.7a3922a5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/42.f93f3c7f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/43.9cb47d07.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/44.14da4196.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/45.d58f54ea.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/46.605c4244.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/47.f81de92d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/48.c24766f9.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/49.e0e93f9a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/5.75a3592b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/50.c37731f2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/51.5daa5256.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/52.9901f9c7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/53.7488a95a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/54.96d1df40.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/55.f40beac1.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/56.596340de.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/57.796601c5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/58.879319ae.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/59.4ca05c3d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/6.0377ba0c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/60.a7c4a633.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/61.9c4a99c3.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/62.a46d12fe.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/63.108ac59f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/64.18e7e87f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/65.ff114422.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/66.8d316103.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/67.09533e88.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/68.37810e5e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/69.71fadcfc.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/7.c5829170.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/70.76b6f674.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/71.2ba4e8cd.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/72.4f5b9f9b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/73.81464a39.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/74.66c11559.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/75.d5e0ec17.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/76.4a1d1e39.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/77.a29f54e9.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/78.2a8dd139.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/79.ab2d8390.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/8.08326ec3.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/80.a905e17b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/81.976246d0.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/82.43e2d4f4.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/83.e0dce43e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/84.fba59f59.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/85.ee892391.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/86.78db9fc4.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/87.b48f406e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/88.75767c0b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/89.86e0154c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/9.28a7790b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/90.db1e0351.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/91.c39dcc6c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/92.300d0ab2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/93.793d24d5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/94.a43aed3f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/95.7d193dca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/96.67e5317e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/97.8e7acaca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/98.79f74317.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/99.f82e0052.js">
+    <link rel="stylesheet" href="/personal_learning_blog/assets/css/0.styles.d89bb2b8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/personal_learning_blog/" class="home-link router-link-active"><!----> <span class="site-name">个人学习博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"> <a href="https://github.com/sunnyzlx/personal_learning_blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"> <a href="https://github.com/sunnyzlx/personal_learning_blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>es5</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/personal_learning_blog/es5/" aria-current="page" class="sidebar-link">JS数据类型</a></li><li><a href="/personal_learning_blog/es5/object.html" class="sidebar-link">object</a></li><li><a href="/personal_learning_blog/es5/array.html" class="sidebar-link">array</a></li><li><a href="/personal_learning_blog/es5/string.html" class="sidebar-link">string</a></li><li><a href="/personal_learning_blog/es5/css.html" class="sidebar-link">CSS</a></li><li><a href="/personal_learning_blog/es5/数据类型转换.html" class="sidebar-link">数据类型转换</a></li><li><a href="/personal_learning_blog/es5/作用域和闭包.html" class="sidebar-link">作用域和闭包</a></li><li><a href="/personal_learning_blog/es5/搞定this.html" class="sidebar-link">搞定this</a></li><li><a href="/personal_learning_blog/es5/正则表达式.html" class="sidebar-link">正则表达式</a></li><li><a href="/personal_learning_blog/es5/作用域练习.html" class="sidebar-link">作用域练习</a></li><li><a href="/personal_learning_blog/es5/原型链.html" class="sidebar-link">原型链</a></li><li><a href="/personal_learning_blog/es5/事件循环机制.html" class="sidebar-link">事件循环机制（event loop）</a></li><li><a href="/personal_learning_blog/es5/HTTP协议.html" class="sidebar-link">HTTP协议</a></li><li><a href="/personal_learning_blog/es5/JS运行机制.html" class="sidebar-link">JS运行机制</a></li><li><a href="/personal_learning_blog/es5/json.html" class="sidebar-link">json</a></li><li><a href="/personal_learning_blog/es5/dom.html" class="sidebar-link">Document</a></li><li><a href="/personal_learning_blog/es5/JS原理题.html" class="active sidebar-link">JS原理题</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/personal_learning_blog/es5/JS高频手写题.html" class="sidebar-link">JS高频手写题</a></li><li><a href="/personal_learning_blog/es5/数组类高频面试题.html" class="sidebar-link">数组类高频面试题</a></li><li><a href="/personal_learning_blog/es5/字符串类高频面试题.html" class="sidebar-link">字符串类高频面试题</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>react</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>wechat</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>leetcode</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>work</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>interview</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="js原理题"><a href="#js原理题" class="header-anchor">#</a> JS原理题</h1> <h3 id="call-apply-bind-三者的区别"><a href="#call-apply-bind-三者的区别" class="header-anchor">#</a> call,apply,bind 三者的区别:</h3> <ul><li>共同点就是修改this指向，不同点就是</li> <li>1.call()和apply()是立刻执行的， 而bind()是返回了一个函数</li> <li>2.call则可以传递多个参数，第一个参数和apply一样，是用来替换的对象，后边是参数列表。</li> <li>3.apply最多只能有两个参数——新this对象和一个数组argArray</li></ul> <h3 id="_1-实现一个call函数"><a href="#_1-实现一个call函数" class="header-anchor">#</a> 1. 实现一个call函数</h3> <ul><li>思路：将要改变this指向的方法挂到目标this上执行并返回，核心是借助this的隐式绑定</li> <li>https://github.com/mqyqingfeng/Blog/issues/11</li> <li>call做了什么:
+<ul><li>将函数设为对象的属性</li> <li>执行&amp;删除这个函数</li> <li>指定this到函数并传入给定参数执行函数</li> <li>如果不传入参数，默认指向为 window</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>Function.prototype.myCall = function(ctx) {
+  if (typeof this !== 'function') {
+    throw new TypeError('not function')
+  }
+  //1.判断有没有传入要绑定的对象，没有默认是window，
+  //如果是基本类型的话通过Object()方法进行转换
+  ctx = Object(ctx) || window
+  let aArgs = Array.prototype.slice.call(arguments, 1)
+  /**
+    在指向的对象obj上新建一个fn属性，值为this，也就是fn()
+    相当于obj变成了
+    {
+        value: 'foo',
+        fn: function fn() {
+          console.log(this.value);
+        }
+    }
+  */
+  ctx.fn = this
+  let result = ctx.fn(...args);
+  // 删除该属性
+  delete ctx.fn;
+  return result;
+};
+
+//下面是三种截取除第一个参数之外剩余参数的方法
+//const args = [...arguments].slice(1);
+//const args = Array.prototype.slice.call(arguments, 1);
+//const args = Array.from(arguments).slice(1);
+</code></pre></div><h3 id="_2-实现一个apply函数"><a href="#_2-实现一个apply函数" class="header-anchor">#</a> 2. 实现一个apply函数</h3> <div class="language- extra-class"><pre class="language-text"><code>Function.prototype.myApply = function(ctx) {
+  ctx = Object(ctx) || window;
+  ctx.fn = this;
+  let args = Array.prototype.slice(arguments, 1)
+  let result;
+  if (!args) {
+    result = ctx.fn();
+  } else {
+    result = ctx.fn(...args)
+  }
+  delete ctx.fn;
+  return result;
+};
+</code></pre></div><h3 id="_3、实现一个bind函数"><a href="#_3、实现一个bind函数" class="header-anchor">#</a> 3、实现一个bind函数</h3> <ul><li>https://github.com/mqyqingfeng/Blog/issues/12</li> <li>https://juejin.im/post/5e17f16f5188254d3f73c7df</li> <li>实现bind要做什么
+<ul><li>返回一个函数，绑定this，传递预置参数</li> <li>bind返回的函数可以作为构造函数使用。故作为构造函数时应使得this失效，但是传入的参数依然有效</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>// mdn的实现
+if (!Function.prototype.bind) {
+  Function.prototype.bind = function(ctx) {
+    //判断调用bind的是不是一个函数，不是的话就要抛出错误
+    if (typeof this !== 'function') {
+      throw new Error('not function')
+    }
+    var aArgs = Array.prototype.slice.call(arguments, 1),
+        fToBind = this,
+        fNOP    = function() {},
+        fBound  = function() {
+          return fToBind.apply(
+            (this instanceof fBound ? this : ctx), 
+            aArgs.concat(Array.prototype.slice.call(arguments)));
+        };
+
+    // 维护原型关系
+    if (this.prototype) {
+      // Function.prototype doesn't have a prototype property
+      fNOP.prototype = this.prototype; 
+    }
+    // 下行的代码使fBound.prototype是fNOP的实例,因此
+    // 返回的fBound若作为new的构造函数,new生成的新对象作为this传入fBound,新对象的__proto__就是fNOP的实例
+    fBound.prototype = new fNOP();
+
+    return fBound;
+  };
+}
+
+let obj = {
+  a:1
+}
+function fn(name, age){
+  this.test = '测试数据1' 
+  console.log(this.a)
+  console.log(name, age)
+  return this.test
+}
+fn.prototype.f = &quot;测试数据2&quot;
+
+let a = fn.myBind(obj, 'xiao')
+let b = new a('ming')
+b.f = '测试数据3'
+console.log(b)
+console.log(b.__proto__ === fn.prototype)
+console.log(b.__proto__.__proto__ === fn.prototype)
+</code></pre></div><h3 id="_4、object-create的基本实现原理"><a href="#_4、object-create的基本实现原理" class="header-anchor">#</a> 4、Object.create的基本实现原理</h3> <ul><li>Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__</li></ul> <div class="language- extra-class"><pre class="language-text"><code>function create(obj) {
+  function F() {}
+  F.prototype = obj
+  return new F()
+}
+
+function create(obj) {
+  return {
+    '__proto__': obj
+  }
+}
+
+function create(obj){
+  return Object.setPrototypeOf({}, obj)
+}
+</code></pre></div><h3 id="_5、instanceof的原理"><a href="#_5、instanceof的原理" class="header-anchor">#</a> 5、instanceof的原理</h3> <ul><li>思路：右边变量的原型存在于左边变量的原型链上</li></ul> <div class="language- extra-class"><pre class="language-text"><code>function instance_of(L, R) {
+  //L 表示左表达式，R 表示右表达式
+  var O = R.prototype; // 取 R 的显示原型
+  L = L.__proto__; // 取 L 的隐式原型
+  while (true) {
+    if (L === null) return false;
+    if (O === L)
+      // 这里重点：当 O 严格等于 L 时，返回 true
+      return true;
+    L = L.__proto__;
+  }
+}
+</code></pre></div><h3 id="_6、模拟new"><a href="#_6、模拟new" class="header-anchor">#</a> 6、模拟new</h3> <ul><li>https://juejin.im/post/5bde7c926fb9a049f66b8b52</li> <li>new操作符做了这些事：
+<ul><li>它创建了一个全新的对象</li> <li>它会被执行[[Prototype]]（也就是__proto__）链接</li> <li>它使this指向新创建的对象</li> <li>通过new创建的每个对象将最终被[[Prototype]]链接到这个函数的prototype对象上</li> <li>如果函数没有返回对象类型Object(包含Functoin, Array, Date, RegExg, Error)，那么new表达式中的函数调用将返回该对象引用</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * 模拟实现 new 操作符
+ * @param  {Function} ctor [构造函数]
+ * @return {Object|Function|Regex|Date|Error}      [返回结果]
+ */
+function newOperator(ctor){
+    if(typeof ctor !== 'function'){
+      throw 'newOperator function the first param must be a function'
+    }
+    newOperator.target = ctor // ES6 new.target 是指向构造函数
+    // 1.创建一个全新的对象，
+    // 2.并且执行[[Prototype]]链接
+    // 4.通过`new`创建的每个对象将最终被`[[Prototype]]`链接到这个函数的`prototype`对象上。
+    var newObj = Object.create(ctor.prototype);
+    // ES5 arguments转成数组 当然也可以用ES6 [...arguments], Array.from(arguments);
+    // 除去ctor构造函数的其余参数
+    var argsArr = [].slice.call(arguments, 1);
+    // 3.生成的新对象会绑定到函数调用的`this`。
+    // 获取到ctor函数返回结果
+    var ctorReturnResult = ctor.apply(newObj, argsArr);
+    // 小结4 中这些类型中合并起来只有Object和Function两种类型 typeof null 也是'object'所以要不等于null，排除null
+    var isObject = typeof ctorReturnResult === 'object' &amp;&amp; ctorReturnResult !== null;
+    var isFunction = typeof ctorReturnResult === 'function';
+    if(isObject || isFunction){
+        return ctorReturnResult;
+    }
+    // 5.如果函数没有返回对象类型`Object`(包含`Functoin`, `Array`, `Date`, `RegExg`, `Error`)，那么`new`表达式中的函数调用会自动返回这个新的对象。
+    return newObj;
+}
+
+// 无注释版
+function newOperator(ctor){
+  if(typeof ctor !== 'function'){
+    throw new TypeError('not function')
+  }
+  newOperator.target = ctor;
+  var args = [].slice.call(arguments,1)
+  var newObj = Object.create(ctor.prototype)
+  var res = ctor.apply(newObj, args)
+  if((typeof res === 'object'&amp;&amp; res !== null) || typeof res === 'function'){
+    return res
+  }
+  return newObj;
+}
+
+let child1 = newOperator(Child1, 'child', 18)
+
+</code></pre></div><h3 id="_7、实现类的继承"><a href="#_7、实现类的继承" class="header-anchor">#</a> 7、实现类的继承</h3> <ul><li>类的继承在几年前是重点内容，有n种继承方式各有优劣，es6普及后越来越不重要，那么多种写法有点『回字有四样写法』的意思，如果还想深入理解的去看红宝书即可，我们目前只实现一种最理想的继承方式。</li> <li>https://juejin.im/post/5c433e216fb9a049c15f841b</li> <li>https://juejin.im/post/5c8e409ee51d4534977bc557</li></ul> <div class="language- extra-class"><pre class="language-text"><code>function Parent(name) {
+    this.parent = name
+}
+Parent.prototype = {
+  constructor: Parent, //需要手动绑定constructor属性
+  say: function() {
+      console.log(`${this.parent}: 你打篮球的样子像kunkun`)
+  }
+}
+
+function Child(name, parent) {
+    // 将父类的构造函数绑定在子类上
+    Parent.call(this, parent)
+    this.child = name
+}
+
+/** 
+ 1. 这一步不用Child.prototype =Parent.prototype的原因是怕共享内存，修改父类原型对象就会影响子类
+ 2. 不用Child.prototype = new Parent()的原因是会调用2次父类的构造方法（另一次是call），会存在一份多余的父类实例属性
+ 3. Object.create是创建了父类原型的副本，与父类原型完全隔离
+*/
+Child.prototype = Object.create(Parent.prototype)
+
+Child.prototype.say = function() {
+    console.log(`${this.parent}好，我是练习时长两年半的${this.child}`);
+}
+
+
+Child.prototype.constructor = Child // 注意记得把子类的构造指向子类本身
+Object.setPrototypeOf(Child, Parent) //继承父类的静态属性
+
+var parent = new Parent('father');
+parent.say() // father: 你打篮球的样子像kunkun
+
+var child = new Child('cxk', 'father');
+child.say() // father好，我是练习时长两年半的cxk
+
+</code></pre></div><h3 id="_7、实现一个基本的promise"><a href="#_7、实现一个基本的promise" class="header-anchor">#</a> 7、实现一个基本的Promise</h3> <div class="language- extra-class"><pre class="language-text"><code>// 未添加异步处理等其他边界情况
+// ①自动执行函数，②三个状态，③then
+class Promise {
+  constructor (fn(resolve, reject)) {
+    // 三个状态
+    this.state = 'pending'
+    this.value= undefined
+    this.reason = undefined
+    let resolve = value =&gt; {
+      if (this.state === 'pending') {
+        this.state = 'fulfilled'
+        this.value = value
+      }
+    }
+    let reject = value =&gt; {
+      if (this.state === 'pending') {
+        this.state = 'rejected'
+        this.reason = value
+      }
+    }
+    // 自动执行函数
+    try {
+      fn(resolve, reject)
+    } catch (e) {
+      reject(e)
+    }
+  }
+  // then 方法 有两个参数onFulfilled onRejected
+  then(onFulfilled, onRejected) {
+    switch (this.state) {
+      case 'fulfilled':
+        onFulfilled(this.value);
+        break
+      case 'rejected':
+        onRejected(this.reason);
+        break
+      default:
+    }
+  }
+}
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/sunnyzlx/personal_learning_blog/edit/master/docs/es5/JS原理题.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/personal_learning_blog/es5/dom.html" class="prev">
+        Document
+      </a></span> <span class="next"><a href="/personal_learning_blog/es5/JS高频手写题.html">
+        JS高频手写题
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/personal_learning_blog/assets/js/app.74e3015b.js" defer></script><script src="/personal_learning_blog/assets/js/2.6c17bd23.js" defer></script><script src="/personal_learning_blog/assets/js/10.f3dfdda0.js" defer></script>
+  </body>
+</html>

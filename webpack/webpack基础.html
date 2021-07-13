@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack基础 | 个人学习博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/personal_learning_blog/logo.png">
+    <link rel="manifest" href="/personal_learning_blog/manifest.json">
+    <link rel="apple-touch-icon" href="/personal_learning_blog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/personal_learning_blog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="个人学习博客">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/personal_learning_blog/assets/css/0.styles.d89bb2b8.css" as="style"><link rel="preload" href="/personal_learning_blog/assets/js/app.74e3015b.js" as="script"><link rel="preload" href="/personal_learning_blog/assets/js/2.6c17bd23.js" as="script"><link rel="preload" href="/personal_learning_blog/assets/js/85.ee892391.js" as="script"><link rel="prefetch" href="/personal_learning_blog/assets/js/10.f3dfdda0.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/100.6fe8a05c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/101.62fa532d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/102.2b529457.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/103.2096c698.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/104.3d417a3f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/105.dd8445dd.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/106.21732a46.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/107.190b9142.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/108.12c56ec1.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/11.15e025ca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/12.3c465d6f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/13.01fa0ab2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/14.228b20df.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/15.e051af75.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/16.b6cd45b2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/17.04b92cfa.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/18.f213c6d2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/19.731e1965.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/20.37dd4851.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/21.4539f92b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/22.ff177489.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/23.337464b7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/24.c615303b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/25.6a702dd7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/26.0c25b06b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/27.36993a49.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/28.ff6e6e2f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/29.687807da.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/3.81a0a7fb.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/30.c6db1f4d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/31.2342ba6a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/32.8198781b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/33.b238ec12.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/34.69e7f1b8.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/35.5a58ffe8.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/36.c925e579.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/37.cba0c296.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/38.3438e861.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/39.bdeebabe.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/4.ba3164ba.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/40.5264cfc2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/41.7a3922a5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/42.f93f3c7f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/43.9cb47d07.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/44.14da4196.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/45.d58f54ea.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/46.605c4244.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/47.f81de92d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/48.c24766f9.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/49.e0e93f9a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/5.75a3592b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/50.c37731f2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/51.5daa5256.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/52.9901f9c7.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/53.7488a95a.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/54.96d1df40.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/55.f40beac1.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/56.596340de.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/57.796601c5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/58.879319ae.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/59.4ca05c3d.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/6.0377ba0c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/60.a7c4a633.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/61.9c4a99c3.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/62.a46d12fe.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/63.108ac59f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/64.18e7e87f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/65.ff114422.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/66.8d316103.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/67.09533e88.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/68.37810e5e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/69.71fadcfc.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/7.c5829170.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/70.76b6f674.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/71.2ba4e8cd.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/72.4f5b9f9b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/73.81464a39.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/74.66c11559.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/75.d5e0ec17.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/76.4a1d1e39.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/77.a29f54e9.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/78.2a8dd139.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/79.ab2d8390.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/8.08326ec3.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/80.a905e17b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/81.976246d0.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/82.43e2d4f4.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/83.e0dce43e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/84.fba59f59.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/86.78db9fc4.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/87.b48f406e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/88.75767c0b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/89.86e0154c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/9.28a7790b.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/90.db1e0351.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/91.c39dcc6c.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/92.300d0ab2.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/93.793d24d5.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/94.a43aed3f.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/95.7d193dca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/96.67e5317e.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/97.8e7acaca.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/98.79f74317.js"><link rel="prefetch" href="/personal_learning_blog/assets/js/99.f82e0052.js">
+    <link rel="stylesheet" href="/personal_learning_blog/assets/css/0.styles.d89bb2b8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/personal_learning_blog/" class="home-link router-link-active"><!----> <span class="site-name">个人学习博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"> <a href="https://github.com/sunnyzlx/personal_learning_blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"> <a href="https://github.com/sunnyzlx/personal_learning_blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es5</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>react</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>wechat</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>webpack</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/personal_learning_blog/webpack/" aria-current="page" class="sidebar-link">webpack4简介</a></li><li><a href="/personal_learning_blog/webpack/webpack基础.html" class="active sidebar-link">webpack基础</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/personal_learning_blog/webpack/webpack基础.html#entry" class="sidebar-link">entry</a></li><li class="sidebar-sub-header"><a href="/personal_learning_blog/webpack/webpack基础.html#output" class="sidebar-link">output</a></li><li class="sidebar-sub-header"><a href="/personal_learning_blog/webpack/webpack基础.html#loader" class="sidebar-link">loader</a></li><li class="sidebar-sub-header"><a href="/personal_learning_blog/webpack/webpack基础.html#plugin" class="sidebar-link">plugin</a></li></ul></li><li><a href="/personal_learning_blog/webpack/webpack进阶.html" class="sidebar-link">webpack进阶</a></li><li><a href="/personal_learning_blog/webpack/webpack高级.html" class="sidebar-link">webpack高级</a></li><li><a href="/personal_learning_blog/webpack/webpack实战.html" class="sidebar-link">webpack实战</a></li><li><a href="/personal_learning_blog/webpack/webpack性能优化.html" class="sidebar-link">webpack性能优化</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>leetcode</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>work</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>interview</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webpack基础"><a href="#webpack基础" class="header-anchor">#</a> webpack基础</h1> <ul><li>入口entry</li> <li>输出output</li> <li>loader</li> <li>插件plugins</li></ul> <h2 id="entry"><a href="#entry" class="header-anchor">#</a> entry</h2> <ul><li>入口起点，用于指示webpack，应该将哪个模块，作为构建其内部依赖图的开始</li></ul> <h3 id="用法"><a href="#用法" class="header-anchor">#</a> 用法</h3> <ul><li>单个入口语法
+<ul><li>entry为 描述文件绝对路径的字符串，默认值为 './src'</li> <li>简单，但可扩展性不好</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 简写
+const config = {
+  entry: './path/to/entry/file.js'
+}
+// 正常 (默认的键名为main)
+const config = {
+  entry: {
+    main: './path/to/entry/file.js'
+  }
+}
+</code></pre></div><ul><li>对象语法
+<ul><li>繁琐，但是可扩展性好</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>const config = {
+  entry: {
+    app: './src/app.js',
+    vendors: './src/vendors.js'
+  }
+}
+</code></pre></div><h3 id="常用场景"><a href="#常用场景" class="header-anchor">#</a> 常用场景</h3> <ul><li>分离应用程序(app)与第三方库(vendor)的入口</li> <li>创建多页面应用程序</li></ul> <div class="language- extra-class"><pre class="language-text"><code>const config = {
+  entry: {
+    app: './src/app.js',
+    vendors: './src/vendors.js
+  }
+}
+// 可以使用CommonsChunkPlugin插件，从应用程序bundle提取vendor引用到 vendor bundle，以实现长效缓存
+// v4 中CommonsChunkPlugin已被替换
+const config = {
+  entry: {
+    pageOne: './src/pageOne/index.js',
+    pageTwo: './src/pageTwo/index.js',
+    pageThree: './src/pageThree/index.js'
+  }
+}
+// 在多页应用中，每当页面跳转时，服务器将为你获取一个新的 HTML 文档。页面重新加载新文档，并且资源被重新下载
+// 使用CommonsChunkPlugin可以为每个页面间的应用程序共享代码创建bundle
+// 多页应用中，由于入口起点增多，我们可以复用入口起点之间的大量代码/模块，以提升性能
+</code></pre></div><h2 id="output"><a href="#output" class="header-anchor">#</a> output</h2> <ul><li>输出output, 告诉webpack在哪里输出它所创建的 bundles，以及如何命名这些文件, 默认值为 ./dist</li> <li>即使存在多个入口起点，也只指定一个输出</li></ul> <h3 id="用法-2"><a href="#用法-2" class="header-anchor">#</a> 用法</h3> <ul><li>output是一个对象</li> <li>filename，定义输出文件的文件名</li> <li>path，定义目标输出目录的绝对路径</li></ul> <div class="language- extra-class"><pre class="language-text"><code>const config = {
+  output = {
+    filename: 'bundle.js',
+    path: './dist'
+  }
+}
+</code></pre></div><h3 id="多个入口起点"><a href="#多个入口起点" class="header-anchor">#</a> 多个入口起点</h3> <ul><li>如果配置了多个单独的'chunk'(例如使用多个入口起点或使用CommonsChunkPlugin插件时), 应使用占位符，确保每个输出文件都具有唯一的名称, 如果不做区分，将会报错，name或者hash都可以</li></ul> <div class="language- extra-class"><pre class="language-text"><code>const config = {
+  entry: {
+    app: './src/app.js',
+    search: './src/search.js'
+  },
+  output: {
+    filename: '[name].js',
+    path: __dirname + '/dist'
+  }
+}
+</code></pre></div><h3 id="使用cdn和资源hash的复杂示例"><a href="#使用cdn和资源hash的复杂示例" class="header-anchor">#</a> 使用CDN和资源hash的复杂示例 ？？</h3> <ul><li>还有一种使用场景，我们会把打包生成的html文件给后端，作为后端的一个入口文件，把其他静态资源js，css,图片等上传到CDN域名下，这样打包生成的html文件，在引用静态资源时，就需要加上CDN的域名地址，可以通过配置publicPath来实现自动生成</li></ul> <div class="language- extra-class"><pre class="language-text"><code>const config = {
+  output = {
+    path: &quot;/home/proj/cdn/assets/[hash]&quot;,
+    publicPath: &quot;http://cdn.example.com/assets/[hash]/&quot;   
+  }
+}
+</code></pre></div><ul><li>在编译时不知道最终输出文件的 publicPath 的情况下，publicPath 可以留空，并且在入口起点文件运行时动态设置。如果你在编译时不知道 publicPath，你可以先忽略它，并且在入口起点设置 <strong>webpack_public_path</strong>。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>__webpack_public_path__ = myRuntimePublicPath
+</code></pre></div><h2 id="loader"><a href="#loader" class="header-anchor">#</a> loader</h2> <ul><li>主要用于将非JS模块进行转换，方便webpack打包</li> <li>使用方式：3种，配置，内联，cli(shell命令)
+<ul><li>推荐使用配置方式，优点：代码简洁，同时可以对各个loader有个全局概览</li></ul></li> <li>通过（loader）预处理函数，用户可以更加灵活地引入细粒度逻辑，例如压缩、打包、语言翻译和其他更多。</li></ul> <h3 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h3> <ul><li>module, 是个对象</li> <li>rules, 是个数组</li> <li>每一条rule都是一个对象，包含两个必须属性：
+<ul><li>test，匹配需要转换的文件；</li> <li>use，使用哪个loader进行转换；</li></ul></li></ul> <h3 id="loader特性"><a href="#loader特性" class="header-anchor">#</a> loader特性</h3> <ul><li>支持链式传递，一组链式的 loader 将按照相反的顺序执行，loader的执行顺序是从下到上，从右到左，在最后一个 loader，返回 webpack 所预期的 JavaScript。</li> <li>loader可以是同步的，也可以是异步的</li></ul> <h3 id="如何编写-loader"><a href="#如何编写-loader" class="header-anchor">#</a> 如何编写 loader？？？</h3> <ul><li>loader 模块需要导出为一个函数</li></ul> <h3 id="静态资源打包"><a href="#静态资源打包" class="header-anchor">#</a> 静态资源打包</h3> <ul><li>图片资源
+<ul><li>file-loader, 将文件发送到输出文件夹，并返回（相对）URL</li> <li>url-loader, 像file loader一样工作，但如果文件小于限制，可以返回 data URL</li> <li>图片，字体都可以使用file-loader, url-loader来处理</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>      {
+        test: '/\.(png|jpg|jpeg|gif)$/',
+        use: {
+          loader: 'url-loader',
+          options: {
+            name: '[hash:7].[ext]',
+            outputPath: 'images/',
+            limit: 10240 
+            // 10kb 图片大小小于limit值，会将图片以base64的格式直接打包到JS中，
+            // 大于limit的值，则会直接将图片打包到dist目录
+          }
+        }
+      }
+</code></pre></div><ul><li>样式资源</li></ul> <ol><li>css-loader</li></ol> <ul><li>解析CSS文件后，使用import加载，并且返回CSS代码,</li> <li>会分析项目中几个css文件之间的依赖关系，最终将他们合并成一个css文件</li> <li>options参数
+importLoaders: 对于使用@import引入的样式文件，也执行css-loader前面的几个loaders</li></ul> <ol start="2"><li>style-loader</li></ol> <ul><li>将模块的导出作为样式添加到DOM中</li> <li>将css-loader处理生成的css文件挂载到页面中的head中</li></ul> <ol start="3"><li>sass-loader</li></ol> <ul><li>node-sass是sass-loader的依赖模块</li> <li>将scss文件加载和转译为css文件</li></ul> <ol start="4"><li>postcss-loader</li></ol> <ul><li>为css样式自动添加浏览器厂商前缀，还需要autoprefixer插件配合 ?? 配置失效</li> <li>字体文件（eot|ttf|svg）
+<ul><li>file-loader， 将字体文件直接从src目录移至dist目录即可</li></ul></li></ul> <h3 id="css分离"><a href="#css分离" class="header-anchor">#</a> CSS分离</h3> <ul><li>extract-text-webpack-plugin</li> <li>它会将所有的入口 chunk(entry chunks)中引用的 *.css，移动到独立分离的 CSS 文件。因此，你的样式将不再内嵌到 JS bundle 中，而是会放到一个单独的 CSS 文件（即 styles.css）当中。 如果你的样式文件大小较大，这会做更快提前加载，因为 CSS bundle 会跟 JS bundle 并行加载</li></ul> <div class="language- extra-class"><pre class="language-text"><code>const ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;);
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: &quot;style-loader&quot;,
+          use: &quot;css-loader&quot;
+        })
+      }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin(&quot;styles.css&quot;),
+  ]
+}
+</code></pre></div><h3 id="css模块化-css-module"><a href="#css模块化-css-module" class="header-anchor">#</a> CSS模块化 (CSS MODULE) ??</h3> <ul><li>解决CSS全局作用域问题，样式冲突(污染)问题</li></ul> <h2 id="plugin"><a href="#plugin" class="header-anchor">#</a> plugin</h2> <ul><li>plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情，类似vue,react的生命周期函数</li> <li>使用： 1）引入插件，2）在plugins数组中实例化插件，并且可以传入参数</li></ul> <h3 id="htmlwebpackplugin"><a href="#htmlwebpackplugin" class="header-anchor">#</a> HtmlWebpackPlugin</h3> <ul><li>HtmlWebpackPlugin插件
+<ul><li>会在打包结束后，在dist目录自动生成引用打包后的index.html文件</li> <li>会在打包结束后，自动在dist文件夹生成一个html文件，并把打包生成的结果自动注入到这个html文件中</li></ul></li></ul> <h3 id="cleanwebpackplugin"><a href="#cleanwebpackplugin" class="header-anchor">#</a> CleanWebpackPlugin</h3> <ul><li>CleanWebpackPlugin插件
+<ul><li>会在打包开始前，删掉dist目录下的所有文件，避免上一次打包的影响</li></ul></li></ul></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/sunnyzlx/personal_learning_blog/edit/master/docs/webpack/webpack基础.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/personal_learning_blog/webpack/" class="prev router-link-active">
+        webpack4简介
+      </a></span> <span class="next"><a href="/personal_learning_blog/webpack/webpack进阶.html">
+        webpack进阶
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/personal_learning_blog/assets/js/app.74e3015b.js" defer></script><script src="/personal_learning_blog/assets/js/2.6c17bd23.js" defer></script><script src="/personal_learning_blog/assets/js/85.ee892391.js" defer></script>
+  </body>
+</html>
